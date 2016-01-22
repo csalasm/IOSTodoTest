@@ -10,8 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var loginTextFied: UITextField!
-    @IBOutlet weak var passwordTextFied: UITextField!
+    
+    @IBOutlet weak var userTextField: UITextField!
+
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loadActivityIndicatorView: UIActivityIndicatorView!
     
    
@@ -31,18 +33,23 @@ class ViewController: UIViewController {
 
     //MARK: Actions
     
- 
+    func initLoginView(){
+        self.userTextField.text = ""
+        self.passwordTextField.text = ""
+        self.loadActivityIndicatorView.stopAnimating()
+    }
     
     @IBAction func loginButton(sender: UIButton) {
         
-        let loginText = loginTextFied.text
-        let passwordText = passwordTextFied.text
-        if loginText == "user" && passwordText == "00" {
+        let loginText = userTextField.text
+        let passwordText = passwordTextField.text
+        loadActivityIndicatorView.startAnimating()
+        if loginText == "user" && passwordText == "00" {//usuario y contraseña correctas
             
-            loadActivityIndicatorView.startAnimating()
             
             
-        }else{
+            
+        }else{//usuario y contraseña incorrectas
             
             showSimpleAlert()
        
@@ -55,9 +62,9 @@ class ViewController: UIViewController {
   // MARK: Configuration
     
     func configureSecureTextField (){
-        passwordTextFied.secureTextEntry=true;
-        passwordTextFied.returnKeyType = .Done
-        passwordTextFied.clearButtonMode = .Always
+        passwordTextField.secureTextEntry = true;
+        passwordTextField.returnKeyType = .Done
+        passwordTextField.clearButtonMode = .Always
     }
     func configureActivityIndicatorView (){
         loadActivityIndicatorView.stopAnimating()
@@ -65,8 +72,8 @@ class ViewController: UIViewController {
     }
     
     func showSimpleAlert() {
-        let title = NSLocalizedString("A Short Title is Best", comment: "")
-        let message = NSLocalizedString("A message should be a short, complete sentence.", comment: "")
+        let title = NSLocalizedString("Fallo al iniciar sesion", comment: "")
+        let message = NSLocalizedString("Intentelo de nuevo", comment: "")
         let cancelButtonTitle = NSLocalizedString("OK", comment: "")
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -74,6 +81,8 @@ class ViewController: UIViewController {
         // Create the action.
         let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .Cancel) { action in
             NSLog("The simple alert's cancel action occured.")
+            self.initLoginView()
+            
         }
         // Add the action.
         alertController.addAction(cancelAction)
