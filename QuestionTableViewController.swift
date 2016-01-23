@@ -1,23 +1,24 @@
 //
-//  TestTableViewController.swift
+//  QuestionTableViewController.swift
 //  IOSTodoTest
 //
-//  Created by INFTEL 23 on 22/1/16.
+//  Created by Carlos Salas on 23/1/16.
 //  Copyright © 2016 EQUIPO INFTEL. All rights reserved.
 //
 
 import UIKit
 
-class TestTableViewController: UITableViewController {
+class QuestionTableViewController: UITableViewController {
     
-    //MARK: Properties
+    // MARK: Properties
+    var question: Question?
+    var test: Test?
+        
+    @IBOutlet weak var questionTitle: UILabel!
     
-    var arrayTest = [Test]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadSampleTest()
+        loadQuestion("First")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,14 +27,14 @@ class TestTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func loadSampleTest(){
-        let test1 = Test(name: "TestPrimero")
+    func loadQuestion(index: String) {
+        let ans1 = Answer(text: "Respuesta 1 "+index, isCorrect: true)
+        let ans2 = Answer(text: "Respuesta 2 "+index, isCorrect: false)
+        let ans3 = Answer(text: "Respuesta 3 "+index, isCorrect: false)
+        var answerList = [Answer]()
+        answerList += [ans1, ans2, ans3]
+        question = Question(text: "Texto de pregunta", arrayAnswers: answerList, image: nil)
         
-        let test2 = Test(name: "TestSegundo")
-        
-        let test3 = Test(name: "TestTercero")
-        
-        arrayTest += [test1,test2,test3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,30 +45,31 @@ class TestTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return arrayTest.count
+        return (question?.arrayAnswers.count)!
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        let cellIdentifier = "QuestionTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! QuestionTableViewCell
+        let answer = question?.arrayAnswers[indexPath.row]
+        cell.questionLabel.text = answer!.text
 
-        // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "TestTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TestTableViewCell
-        
-        // Fetches the appropriate meal for the data source layout.
-        let test = arrayTest[indexPath.row]
-        
-        cell.nameLabel.text = test.name
+        // Configure the cell...
 
-        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        
+        let selectedRow = indexPath?.row
+        print(selectedRow)
     }
     
 
@@ -106,25 +108,23 @@ class TestTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
-    @IBAction func endSesionButton(sender: UIBarButtonItem) {
-        //Cerrar sesion!!!!!!!!!
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showQuestion" {
-            let questionTableViewController = segue.destinationViewController as! QuestionTableViewController
-            if let selectedTestCell = sender as? TestTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedTestCell)!
-                let selectedTest = arrayTest[indexPath.row]
-                questionTableViewController.test = selectedTest
-            }
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    // MARK: Action
+    
+    @IBAction func nextQuestion(sender: UIBarButtonItem) {
+        print("SIGUIENTE PREGUNTA")
+        questionTitle.text = "SIGUIENTE PREGUNTA"
+        loadQuestion("Second")
+        tableView.reloadData()
     }
     
-
 }
