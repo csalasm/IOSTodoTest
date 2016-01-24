@@ -13,12 +13,18 @@ class QuestionTableViewController: UITableViewController {
     // MARK: Properties
     var question: Question?
     var test: Test?
+    
+    // MARK: Management variables
+    var selectedRow: Int = 0
         
     @IBOutlet weak var questionTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadQuestion("First")
+        print (test?.name)
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,7 +64,7 @@ class QuestionTableViewController: UITableViewController {
         let cellIdentifier = "QuestionTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! QuestionTableViewCell
         let answer = question?.arrayAnswers[indexPath.row]
-        cell.questionLabel.text = answer!.text
+        cell.questionLabel.text = answer?.text
 
         // Configure the cell...
 
@@ -66,11 +72,33 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow
+        selectedRow = (tableView.indexPathForSelectedRow?.row)!
+        resetChecks()
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if cell.accessoryType == .Checkmark {
+                cell.accessoryType = .None
+            } else {
+                cell.accessoryType = .Checkmark
+            }
+            
+        }
         
-        let selectedRow = indexPath?.row
-        print(selectedRow)
     }
+    
+    func resetChecks()
+    {
+        for i in 0...tableView.numberOfSections-1
+        {
+            for j in 0...tableView.numberOfRowsInSection(i)-1
+            {
+                if let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: j, inSection: i)) {
+                    cell.accessoryType = .None
+                }
+                
+            }
+        }
+    }
+    
     
 
     /*
@@ -119,12 +147,13 @@ class QuestionTableViewController: UITableViewController {
     */
     
     // MARK: Action
-    
     @IBAction func nextQuestion(sender: UIBarButtonItem) {
         print("SIGUIENTE PREGUNTA")
         questionTitle.text = "SIGUIENTE PREGUNTA"
         loadQuestion("Second")
         tableView.reloadData()
+        print(selectedRow)
+        resetChecks()
     }
     
 }
