@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		852AB0711C55585100DCFE7D /* FrostedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AB0701C55585100DCFE7D /* FrostedSidebar.swift */; };
+		852AB0731C5558B300DCFE7D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852AB0721C5558B300DCFE7D /* TabBarController.swift */; };
+		852AB0751C55599D00DCFE7D /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 852AB0741C55599D00DCFE7D /* burger.png */; };
+		852AB0771C5559EC00DCFE7D /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 852AB0761C5559EC00DCFE7D /* gear.png */; };
+		859273FA1C5627100029C503 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273F91C5627100029C503 /* logout.png */; };
+		859273FE1C5628470029C503 /* hacer_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FB1C5628470029C503 /* hacer_test.png */; };
+		859273FF1C5628470029C503 /* resultados.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FC1C5628470029C503 /* resultados.png */; };
+		859274001C5628470029C503 /* cerrar_sesion.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FD1C5628470029C503 /* cerrar_sesion.png */; };
+		859274021C5630290029C503 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274011C5630290029C503 /* ResultsTableViewController.swift */; };
+		859274041C56339D0029C503 /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 859274031C56339D0029C503 /* Background.jpg */; };
 		8DEBE20F1C529E8300F057DE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE20E1C529E8300F057DE /* Test.swift */; };
 		8DEBE2111C52A01100F057DE /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */; };
 		8DEBE2131C52A33000F057DE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2121C52A33000F057DE /* Question.swift */; };
@@ -24,6 +34,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		852AB0701C55585100DCFE7D /* FrostedSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrostedSidebar.swift; path = "../../../Downloads/FrostedSidebar-master/FrostedSidebar/FrostedSidebar.swift"; sourceTree = "<group>"; };
+		852AB0721C5558B300DCFE7D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = "../../../Downloads/FrostedSidebar-master/FrostedSidebar/TabBarController.swift"; sourceTree = "<group>"; };
+		852AB0741C55599D00DCFE7D /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger.png; path = "../../../Downloads/FrostedSidebar-master/FrostedSidebar/burger.png"; sourceTree = "<group>"; };
+		852AB0761C5559EC00DCFE7D /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = "../../../Downloads/FrostedSidebar-master/FrostedSidebar/gear.png"; sourceTree = "<group>"; };
+		859273F91C5627100029C503 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logout.png; path = ../../../Downloads/logout.png; sourceTree = "<group>"; };
+		859273FB1C5628470029C503 /* hacer_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hacer_test.png; sourceTree = "<group>"; };
+		859273FC1C5628470029C503 /* resultados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultados.png; sourceTree = "<group>"; };
+		859273FD1C5628470029C503 /* cerrar_sesion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerrar_sesion.png; sourceTree = "<group>"; };
+		859274011C5630290029C503 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		859274031C56339D0029C503 /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		8DEBE20E1C529E8300F057DE /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		8DEBE2121C52A33000F057DE /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -53,6 +73,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		852AB0781C5559F600DCFE7D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				859273F91C5627100029C503 /* logout.png */,
+				859273FB1C5628470029C503 /* hacer_test.png */,
+				859274031C56339D0029C503 /* Background.jpg */,
+				859273FC1C5628470029C503 /* resultados.png */,
+				859273FD1C5628470029C503 /* cerrar_sesion.png */,
+				852AB0741C55599D00DCFE7D /* burger.png */,
+				852AB0761C5559EC00DCFE7D /* gear.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E1BFAB471C522A9A00B6EDB7 = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				E1BFAB531C522A9A00B6EDB7 /* AppDelegate.swift */,
+				852AB0701C55585100DCFE7D /* FrostedSidebar.swift */,
 				E1BFAB551C522A9A00B6EDB7 /* ViewController.swift */,
+				852AB0721C5558B300DCFE7D /* TabBarController.swift */,
+				852AB0781C5559F600DCFE7D /* Supporting Files */,
 				E1BFAB571C522A9A00B6EDB7 /* Main.storyboard */,
+				859274011C5630290029C503 /* ResultsTableViewController.swift */,
 				8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */,
 				8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */,
 				8DEBE2181C52B30B00F057DE /* TestViewController.swift */,
@@ -150,6 +188,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1BFAB5E1C522A9A00B6EDB7 /* LaunchScreen.storyboard in Resources */,
+				859274041C56339D0029C503 /* Background.jpg in Resources */,
+				859274001C5628470029C503 /* cerrar_sesion.png in Resources */,
+				859273FA1C5627100029C503 /* logout.png in Resources */,
+				852AB0751C55599D00DCFE7D /* burger.png in Resources */,
+				859273FF1C5628470029C503 /* resultados.png in Resources */,
+				859273FE1C5628470029C503 /* hacer_test.png in Resources */,
+				852AB0771C5559EC00DCFE7D /* gear.png in Resources */,
 				E1BFAB5B1C522A9A00B6EDB7 /* Assets.xcassets in Resources */,
 				E1BFAB591C522A9A00B6EDB7 /* Main.storyboard in Resources */,
 				E187E87F1C53AD5D0071D83B /* QuestionTableViewController.xib in Resources */,
@@ -168,9 +213,12 @@
 				8DEBE2111C52A01100F057DE /* TestTableViewCell.swift in Sources */,
 				8DEBE2191C52B30B00F057DE /* TestViewController.swift in Sources */,
 				8DEBE2131C52A33000F057DE /* Question.swift in Sources */,
+				852AB0711C55585100DCFE7D /* FrostedSidebar.swift in Sources */,
 				8DEBE2151C52A5B400F057DE /* Answer.swift in Sources */,
+				859274021C5630290029C503 /* ResultsTableViewController.swift in Sources */,
 				E1BFAB541C522A9A00B6EDB7 /* AppDelegate.swift in Sources */,
 				E187E87E1C53AD5D0071D83B /* QuestionTableViewController.swift in Sources */,
+				852AB0731C5558B300DCFE7D /* TabBarController.swift in Sources */,
 				8DEBE2171C52AC1D00F057DE /* TestTableViewController.swift in Sources */,
 				8DEBE20F1C529E8300F057DE /* Test.swift in Sources */,
 			);

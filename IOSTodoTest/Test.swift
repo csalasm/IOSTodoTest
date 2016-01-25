@@ -15,12 +15,14 @@ class Test{
     
     var name:String
     var time:Int
+    var tipo:String
+    var arrayAnswers: [Answer]? //Array de preguntas
     
-    
+    //Mark: Init
     
     init(name:String){
         self.name = name
         self.time = 0
-
-    }
+        self.tipo = "No asignado"
+        }
 }

@@ -12,7 +12,9 @@ class TestTableViewCell: UITableViewCell {
 
     //MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
-    
+
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -47,18 +47,18 @@ class ViewController: UIViewController {
         if loginText == "user" && passwordText == "00" {//usuario y contraseña correctas
             
             
-            
-            
         }else{//usuario y contraseña incorrectas
             
             showSimpleAlert()
-       
             
         }
         
-        
-        
     }
+    
+    @IBAction func menu(sender: AnyObject) {
+        (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
+    }
+    
   // MARK: Configuration
     
     func configureSecureTextField (){
