@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     var user: String?
     var password: String?
     
+    @IBOutlet weak var buttonInicio: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
