@@ -10,8 +10,14 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
+    // MARK: Properties
+    
+    var arrayResults = [Result]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadSampleResults()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +35,33 @@ class ResultsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return arrayResults.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "ResultsTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ResultsTableViewCell
+        
+        // Fetches the appropriate meal for the data source layout.
+        let result = arrayResults[indexPath.row]
+        
+        cell.nameLabel.text = result.nameTest
+        cell.scoreLabel.text = String(result.score)
+        cell.successesLabel.text = String(result.successes)
+        cell.failuresLabel.text = String(result.failures)
+        cell.scoreLabel.text = String(result.score)
         return cell
+
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -107,5 +123,14 @@ class ResultsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func loadSampleResults(){
+        let res1 = Result(name: "ResPrimero")
+        
+        let res2 = Result(name: "ResSegundo")
+        
+        let res3 = Result(name: "ResTercero")
+        
+        arrayResults += [res1,res2,res3]
+    }
 
 }
