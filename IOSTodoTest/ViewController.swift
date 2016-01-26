@@ -10,13 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
+    // MARK: Properties
     @IBOutlet weak var userTextField: UITextField!
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loadActivityIndicatorView: UIActivityIndicatorView!
     
-   
+    var user: String?
+    var password: String?
     
     
     override func viewDidLoad() {
@@ -42,8 +43,23 @@ class ViewController: UIViewController {
     @IBAction func loginButton(sender: UIButton) {
         
         let loginText = userTextField.text
-        let passwordText = passwordTextField.text
-        loadActivityIndicatorView.startAnimating()
+        password = passwordTextField.text
+        
+        if (loginText != "" && password != "") {
+            let usuarioActions = UsuarioActions()
+            
+                usuarioActions.userAuth(loginText!) { (usuario: Usuario) -> Void in
+                dispatch_async(dispatch_get_main_queue(), {
+                    print(usuario.apellidos)
+                    })
+            
+        }
+        }
+        else {
+          showSimpleAlert()
+        }
+        
+        /*loadActivityIndicatorView.startAnimating()
         if loginText == "user" && passwordText == "00" {//usuario y contraseña correctas
             
             
@@ -51,7 +67,7 @@ class ViewController: UIViewController {
             
             showSimpleAlert()
             
-        }
+        }*/
         
     }
     
@@ -89,5 +105,7 @@ class ViewController: UIViewController {
         
         presentViewController(alertController, animated: true, completion: nil)
     }
+
+    
 }
 
