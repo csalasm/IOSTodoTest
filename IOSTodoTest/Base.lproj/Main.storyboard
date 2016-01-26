@@ -109,35 +109,27 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="260"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hDf-Xe-S0j">
-                                    <rect key="frame" x="-8" y="-8" width="256" height="252"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hDf-Xe-S0j">
+                                    <rect key="frame" x="20" y="40" width="508" height="198"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-5g-abb">
-                                            <rect key="frame" x="8" y="8" width="240" height="128"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="jgvujvjbhjkhbjbjhbjhbjhbk" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-5g-abb">
+                                            <rect key="frame" x="8" y="8" width="492" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="pythagorean_theorem1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="eon-Bo-gs1">
-                                            <rect key="frame" x="8" y="148" width="128" height="96"/>
+                                            <rect key="frame" x="194" y="70" width="120" height="120"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="96" id="MCU-2v-lsF"/>
-                                                <constraint firstAttribute="width" constant="128" id="Mo8-8l-VCR"/>
+                                                <constraint firstAttribute="width" constant="120" id="ES4-4z-d0A"/>
+                                                <constraint firstAttribute="height" constant="120" id="xb7-P6-3yX"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="eon-Bo-gs1" firstAttribute="leading" secondItem="hDf-Xe-S0j" secondAttribute="leading" constant="140" id="g1V-yx-jQf"/>
-                                    </constraints>
                                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="hDf-Xe-S0j" firstAttribute="centerX" secondItem="mQ9-Ng-gJ3" secondAttribute="centerX" id="QEM-Lk-Jp9"/>
-                                <constraint firstItem="hDf-Xe-S0j" firstAttribute="centerX" secondItem="mQ9-Ng-gJ3" secondAttribute="centerX" constant="1" id="qKG-Qb-kjV"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="60" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionTableViewCell" rowHeight="60" id="am5-eg-BMb" customClass="QuestionTableViewCell" customModule="IOSTodoTest" customModuleProvider="target">
@@ -168,10 +160,13 @@
                     <navigationItem key="navigationItem" id="d0e-6W-aY6">
                         <barButtonItem key="rightBarButtonItem" title="Siguiente" id="IIP-f9-HK0">
                             <connections>
-                                <action selector="nextQuestion:" destination="5lJ-Y2-NJg" id="e7F-OE-D1s"/>
+                                <action selector="nextQuestion:" destination="5lJ-Y2-NJg" id="dOp-yT-85P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="questionText" destination="mzT-5g-abb" id="510-F3-iGt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elo-gQ-ZMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

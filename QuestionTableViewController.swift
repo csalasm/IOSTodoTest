@@ -17,7 +17,8 @@ class QuestionTableViewController: UITableViewController {
     // MARK: Management variables
     var selectedRow: Int = 0
         
-    @IBOutlet weak var questionTitle: UILabel!
+    
+    @IBOutlet weak var questionText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,10 +148,11 @@ class QuestionTableViewController: UITableViewController {
     */
     
     // MARK: Action
+    
     @IBAction func nextQuestion(sender: UIBarButtonItem) {
         print("SIGUIENTE PREGUNTA")
-        questionTitle.text = "SIGUIENTE PREGUNTA"
-        loadQuestion("Second")
+        questionText.text = "SIGUIENTE PREGUNTA"
+       loadQuestion("Second")
         tableView.reloadData()
         print(selectedRow)
         resetChecks()
