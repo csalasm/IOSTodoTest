@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         configureSecureTextField()
         configureActivityIndicatorView()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        buttonInicio.layer.cornerRadius = 10
+        buttonInicio.layer.borderWidth = 5
+        //buttonInicio.layer.borderColor
     }
 
     override func didReceiveMemoryWarning() {

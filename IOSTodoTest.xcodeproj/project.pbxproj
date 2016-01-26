@@ -14,6 +14,9 @@
 		859274041C56339D0029C503 /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 859274031C56339D0029C503 /* Background.jpg */; };
 		859274061C56381C0029C503 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274051C56381C0029C503 /* TabBarController.swift */; };
 		859274081C5638970029C503 /* FrostedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274071C5638970029C503 /* FrostedSidebar.swift */; };
+		8592740E1C576E880029C503 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592740D1C576E880029C503 /* ResultsTableViewCell.swift */; };
+		859274111C5770BC0029C503 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274101C5770BC0029C503 /* Result.swift */; };
+		8D9625DD1C578DCB00E197F1 /* final_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9625DC1C578DCB00E197F1 /* final_banner.png */; };
 		8DEBE20F1C529E8300F057DE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE20E1C529E8300F057DE /* Test.swift */; };
 		8DEBE2111C52A01100F057DE /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */; };
 		8DEBE2131C52A33000F057DE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2121C52A33000F057DE /* Question.swift */; };
@@ -43,6 +46,9 @@
 		859274031C56339D0029C503 /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		859274051C56381C0029C503 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ../TabBarController.swift; sourceTree = "<group>"; };
 		859274071C5638970029C503 /* FrostedSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrostedSidebar.swift; path = ../FrostedSidebar.swift; sourceTree = "<group>"; };
+		8592740D1C576E880029C503 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsTableViewCell.swift; path = ../ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		859274101C5770BC0029C503 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		8D9625DC1C578DCB00E197F1 /* final_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = final_banner.png; sourceTree = "<group>"; };
 		8DEBE20E1C529E8300F057DE /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		8DEBE2121C52A33000F057DE /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 		852AB0781C5559F600DCFE7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D9625DC1C578DCB00E197F1 /* final_banner.png */,
 				E16FD2861C56439D004271D9 /* pythagorean_theorem1.gif */,
 				859273FB1C5628470029C503 /* hacer_test.png */,
 				859274031C56339D0029C503 /* Background.jpg */,
@@ -116,6 +123,7 @@
 				852AB0781C5559F600DCFE7D /* Supporting Files */,
 				E1BFAB571C522A9A00B6EDB7 /* Main.storyboard */,
 				859274011C5630290029C503 /* ResultsTableViewController.swift */,
+				8592740D1C576E880029C503 /* ResultsTableViewCell.swift */,
 				8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */,
 				8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */,
 				8DEBE2181C52B30B00F057DE /* TestViewController.swift */,
@@ -125,6 +133,7 @@
 				E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */,
 				E187E87D1C53AD5D0071D83B /* QuestionTableViewController.xib */,
 				8DEBE2141C52A5B400F057DE /* Answer.swift */,
+				859274101C5770BC0029C503 /* Result.swift */,
 				E1BFAB5A1C522A9A00B6EDB7 /* Assets.xcassets */,
 				E1BFAB5C1C522A9A00B6EDB7 /* LaunchScreen.storyboard */,
 				E1BFAB5F1C522A9A00B6EDB7 /* Info.plist */,
@@ -195,6 +204,7 @@
 			files = (
 				E1BFAB5E1C522A9A00B6EDB7 /* LaunchScreen.storyboard in Resources */,
 				859274041C56339D0029C503 /* Background.jpg in Resources */,
+				8D9625DD1C578DCB00E197F1 /* final_banner.png in Resources */,
 				859274001C5628470029C503 /* cerrar_sesion.png in Resources */,
 				859273FF1C5628470029C503 /* resultados.png in Resources */,
 				859273FE1C5628470029C503 /* hacer_test.png in Resources */,
@@ -214,11 +224,13 @@
 			files = (
 				859274081C5638970029C503 /* FrostedSidebar.swift in Sources */,
 				E1BFAB561C522A9A00B6EDB7 /* ViewController.swift in Sources */,
+				8592740E1C576E880029C503 /* ResultsTableViewCell.swift in Sources */,
 				859274061C56381C0029C503 /* TabBarController.swift in Sources */,
 				E1CB08321C576A5900CBD5DA /* HttpPetition.swift in Sources */,
 				E1D5D5EA1C57FE7B00D2FFB3 /* Usuario.swift in Sources */,
 				E187E87B1C53A8AE0071D83B /* QuestionTableViewCell.swift in Sources */,
 				8DEBE2111C52A01100F057DE /* TestTableViewCell.swift in Sources */,
+				859274111C5770BC0029C503 /* Result.swift in Sources */,
 				8DEBE2191C52B30B00F057DE /* TestViewController.swift in Sources */,
 				8DEBE2131C52A33000F057DE /* Question.swift in Sources */,
 				8DEBE2151C52A5B400F057DE /* Answer.swift in Sources */,
