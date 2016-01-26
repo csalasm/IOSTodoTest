@@ -64,6 +64,11 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPp-0h-26v">
                                         <rect key="frame" x="120" y="312" width="240" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.18681255108721251" blue="0.26552198676943262" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Kz8-hk-ija"/>
+                                            <constraint firstAttribute="height" constant="40" id="YjW-4c-zml"/>
+                                        </constraints>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -90,6 +95,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="3qr-dL-K3L"/>
                     <connections>
+                        <outlet property="buttonInicio" destination="qPp-0h-26v" id="vFr-zE-qfe"/>
                         <outlet property="loadActivityIndicatorView" destination="0FM-b6-smg" id="7NU-Fu-6u4"/>
                         <outlet property="passwordTextField" destination="iB4-BJ-VQl" id="BGI-hE-MIU"/>
                         <outlet property="userTextField" destination="Xvv-dr-gfN" id="PJd-43-d2o"/>
@@ -135,19 +141,24 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="260"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hDf-Xe-S0j">
-                                    <rect key="frame" x="30" y="20" width="540" height="198"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hDf-Xe-S0j">
+                                    <rect key="frame" x="30" y="20" width="540" height="215"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-5g-abb">
-                                            <rect key="frame" x="79" y="8" width="382" height="50"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-5g-abb">
+                                            <rect key="frame" x="79" y="8" width="382" height="67"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="67" id="bsO-Ni-sz4"/>
+                                                <constraint firstAttribute="width" constant="382" id="eN1-wN-8y2"/>
+                                            </constraints>
+                                            <string key="text">jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv </string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j7o-TV-9rF">
-                                            <rect key="frame" x="210" y="70" width="120" height="120"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j7o-TV-9rF">
+                                            <rect key="frame" x="210" y="87" width="120" height="120"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="pythagorean_theorem1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="eon-Bo-gs1">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="pythagorean_theorem1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="eon-Bo-gs1">
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="ES4-4z-d0A"/>

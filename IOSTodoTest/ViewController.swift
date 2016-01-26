@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loadActivityIndicatorView: UIActivityIndicatorView!
     
+    @IBOutlet weak var buttonInicio: UIButton!
    
     
     
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
         configureSecureTextField()
         configureActivityIndicatorView()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        buttonInicio.layer.cornerRadius = 10
+        buttonInicio.layer.borderWidth = 5
+        //buttonInicio.layer.borderColor
     }
 
     override func didReceiveMemoryWarning() {
