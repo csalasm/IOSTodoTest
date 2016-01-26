@@ -105,13 +105,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="44" text="Titulo de la pregunta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XMH-Ml-2sE">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="mQ9-Ng-gJ3">
+                            <rect key="frame" x="0.0" y="64" width="600" height="260"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hDf-Xe-S0j">
+                                    <rect key="frame" x="-8" y="-8" width="256" height="252"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-5g-abb">
+                                            <rect key="frame" x="8" y="8" width="240" height="128"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="pythagorean_theorem1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="eon-Bo-gs1">
+                                            <rect key="frame" x="8" y="148" width="128" height="96"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="96" id="MCU-2v-lsF"/>
+                                                <constraint firstAttribute="width" constant="128" id="Mo8-8l-VCR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eon-Bo-gs1" firstAttribute="leading" secondItem="hDf-Xe-S0j" secondAttribute="leading" constant="140" id="g1V-yx-jQf"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="hDf-Xe-S0j" firstAttribute="centerX" secondItem="mQ9-Ng-gJ3" secondAttribute="centerX" id="QEM-Lk-Jp9"/>
+                                <constraint firstItem="hDf-Xe-S0j" firstAttribute="centerX" secondItem="mQ9-Ng-gJ3" secondAttribute="centerX" constant="1" id="qKG-Qb-kjV"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="60" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionTableViewCell" rowHeight="60" id="am5-eg-BMb" customClass="QuestionTableViewCell" customModule="IOSTodoTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="158" width="600" height="60"/>
@@ -145,9 +172,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="questionTitle" destination="XMH-Ml-2sE" id="OiB-8G-LVb"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elo-gQ-ZMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,6 +331,9 @@
             <point key="canvasLocation" x="2211" y="-1410"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pythagorean_theorem1.gif" width="329" height="214"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2TC-lz-sTt"/>
     </inferredMetricsTieBreakers>
