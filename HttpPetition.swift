@@ -20,7 +20,8 @@ class HttpPetition {
     }
     
     func httpGet(manageResponse: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request = NSURLRequest(URL: url!)
+        let request = NSMutableURLRequest(URL: url!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request, completionHandler: manageResponse)
         task.resume()
