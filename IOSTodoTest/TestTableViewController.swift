@@ -16,8 +16,10 @@ class TestTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        arrayTest = appDelegate.arrayTest!
+        print(arrayTest[0].nombre)
+        loadSampleTest()
      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,7 +35,7 @@ class TestTableViewController: UITableViewController {
         
        let test3 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
         
-        arrayTest += [test1,test2,test3]
+        //arrayTest += [test1,test2,test3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,10 +147,10 @@ class TestTableViewController: UITableViewController {
                 let selectedTest = arrayTest[indexPath.row]
                 questionTableViewController.test = selectedTest
                 
-                let testActions = TestActions()
+               
                 
-               // testActions.testAuth("33333333A") {(testsArray:[Test]) -> Void in
-                    testActions.testAuth("33333333A") {(testArray:[Test]) -> Void in
+               
+              
                 
                     
                 
@@ -156,6 +158,6 @@ class TestTableViewController: UITableViewController {
             }
         }
     }
-    }
+    
 
 }

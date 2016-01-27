@@ -151,6 +151,8 @@
 				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
 				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
 				BDCDAD5F1C58C06400E46090 /* TestActions.swift */,
+				858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */,
+				858A969D1C58BFB000F8FBF6 /* Examen.swift */,
 			);
 			path = IOSTodoTest;
 			sourceTree = "<group>";
@@ -249,6 +251,7 @@
 				8DEBE2151C52A5B400F057DE /* Answer.swift in Sources */,
 				E1CB08341C57790C00CBD5DA /* UsuarioActions.swift in Sources */,
 				BDCDAD601C58C06400E46090 /* TestActions.swift in Sources */,
+				858A969C1C58BE6500F8FBF6 /* ExamenActions.swift in Sources */,
 				859274021C5630290029C503 /* ResultsTableViewController.swift in Sources */,
 				E1CB08361C5783F000CBD5DA /* SwiftyJSON.swift in Sources */,
 				E1BFAB541C522A9A00B6EDB7 /* AppDelegate.swift in Sources */,

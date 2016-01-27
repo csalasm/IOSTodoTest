@@ -18,14 +18,12 @@ class TestActions {
          var testsArray:[Test] = [Test]()
         httpPetition.httpGet({ (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print(response.debugDescription)
-            print(reply)
+            
+            //print(reply)
             if data != nil {
                 let json = JSON(data: data!)
-                for (key, subJson):(String, JSON) in json["tests"] {
-                    test = Test(nombre:subJson["nombre"].stringValue, idTest:CLong(subJson["idTest"].stringValue)!, duracion: subJson["duracaion"].stringValue, resta: subJson["resta"].stringValue, activo: subJson["activo"].stringValue)
-                    //print(test?.nombre)
-                     print("HOLALALALAL")
+                for (key, subJson):(String, JSON) in json {
+                    test = Test(nombre:subJson["nombre"].stringValue, idTest:CLong(subJson["idTest"].stringValue)!, duracion: subJson["duracion"].stringValue, resta: subJson["resta"].stringValue, activo: subJson["activo"].stringValue)
                     testsArray.append(test!)
                     
                       }
