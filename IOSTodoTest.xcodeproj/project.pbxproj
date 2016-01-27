@@ -100,24 +100,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		858A969F1C58BFDE00F8FBF6 /* Examen */ = {
-			isa = PBXGroup;
-			children = (
-				858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */,
-				858A969D1C58BFB000F8FBF6 /* Examen.swift */,
-			);
-			name = Examen;
-			sourceTree = "<group>";
-		};
-		858A96A01C58C2EA00F8FBF6 /* Usuario */ = {
-			isa = PBXGroup;
-			children = (
-				E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */,
-				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
-			);
-			name = Usuario;
-			sourceTree = "<group>";
-		};
 		E1BFAB471C522A9A00B6EDB7 = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +142,10 @@
 				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
 				E1BFAB5C1C522A9A00B6EDB7 /* LaunchScreen.storyboard */,
 				E1BFAB5F1C522A9A00B6EDB7 /* Info.plist */,
-				858A96A01C58C2EA00F8FBF6 /* Usuario */,
-				858A969F1C58BFDE00F8FBF6 /* Examen */,
+				E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */,
+				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
+				858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */,
+				858A969D1C58BFB000F8FBF6 /* Examen.swift */,
 			);
 			path = IOSTodoTest;
 			sourceTree = "<group>";
