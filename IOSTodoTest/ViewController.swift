@@ -65,16 +65,21 @@ class ViewController: UIViewController {
                         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                         appDelegate.usuario = usuario
                         //let preguntaAction = PreguntaActions()
-                        let examenAction = ExamenActions()
-                        examenAction.getExamen(usuario){(arrayExamenes: [Examen]) -> Void in
-                        
+                        let testAction = TestActions()
+                        testAction.testAuth(usuario.dni) { (arrayTest: [Test]) -> Void in
+                            dispatch_async(dispatch_get_main_queue(), {
+                                appDelegate.arrayTest = arrayTest
+                                
+                                
+                                // Despues de cargar los tests, cambiamos de ventana
+                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                let vcTest = storyboard.instantiateViewControllerWithIdentifier("TestList")
+                                self.presentViewController(vcTest, animated: true, completion: nil)
+                                
+                            })
                         }
-                        //preguntaAction.getPregunta("3") {(question: [Question]) -> Void in
-                            
-                        //}
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewControllerWithIdentifier("TestList")
-                        self.presentViewController(vc, animated: true, completion: nil)
+                        
+                        
                     }
                     })
             

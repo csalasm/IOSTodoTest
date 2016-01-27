@@ -27,6 +27,7 @@
 		8DEBE2151C52A5B400F057DE /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2141C52A5B400F057DE /* Answer.swift */; };
 		8DEBE2171C52AC1D00F057DE /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */; };
 		8DEBE2191C52B30B00F057DE /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2181C52B30B00F057DE /* TestViewController.swift */; };
+		BDCDAD601C58C06400E46090 /* TestActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDAD5F1C58C06400E46090 /* TestActions.swift */; };
 		E16FD2871C56439D004271D9 /* pythagorean_theorem1.gif in Resources */ = {isa = PBXBuildFile; fileRef = E16FD2861C56439D004271D9 /* pythagorean_theorem1.gif */; };
 		E187E87B1C53A8AE0071D83B /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E87A1C53A8AE0071D83B /* QuestionTableViewCell.swift */; };
 		E187E87E1C53AD5D0071D83B /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */; };
@@ -63,6 +64,7 @@
 		8DEBE2141C52A5B400F057DE /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		8DEBE2181C52B30B00F057DE /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		BDCDAD5F1C58C06400E46090 /* TestActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestActions.swift; sourceTree = "<group>"; };
 		E16FD2861C56439D004271D9 /* pythagorean_theorem1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pythagorean_theorem1.gif; sourceTree = "<group>"; };
 		E187E87A1C53A8AE0071D83B /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTableViewCell.swift; path = ../QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTableViewController.swift; path = ../QuestionTableViewController.swift; sourceTree = "<group>"; };
@@ -136,12 +138,12 @@
 				8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */,
 				8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */,
 				8DEBE2181C52B30B00F057DE /* TestViewController.swift */,
-				8DEBE20E1C529E8300F057DE /* Test.swift */,
-				8DEBE2121C52A33000F057DE /* Question.swift */,
 				E187E87A1C53A8AE0071D83B /* QuestionTableViewCell.swift */,
 				E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */,
 				E187E87D1C53AD5D0071D83B /* QuestionTableViewController.xib */,
+				8DEBE2121C52A33000F057DE /* Question.swift */,
 				8DEBE2141C52A5B400F057DE /* Answer.swift */,
+				8DEBE20E1C529E8300F057DE /* Test.swift */,
 				859274101C5770BC0029C503 /* Result.swift */,
 				E1BFAB5A1C522A9A00B6EDB7 /* Assets.xcassets */,
 				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
@@ -150,6 +152,8 @@
 				E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */,
 				8D35BD261C58BEE60036D092 /* PreguntaActions.swift */,
 				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
+				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
+				BDCDAD5F1C58C06400E46090 /* TestActions.swift */,
 				858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */,
 				858A969D1C58BFB000F8FBF6 /* Examen.swift */,
 			);
@@ -250,6 +254,7 @@
 				8DEBE2131C52A33000F057DE /* Question.swift in Sources */,
 				8DEBE2151C52A5B400F057DE /* Answer.swift in Sources */,
 				E1CB08341C57790C00CBD5DA /* UsuarioActions.swift in Sources */,
+				BDCDAD601C58C06400E46090 /* TestActions.swift in Sources */,
 				858A969C1C58BE6500F8FBF6 /* ExamenActions.swift in Sources */,
 				859274021C5630290029C503 /* ResultsTableViewController.swift in Sources */,
 				E1CB08361C5783F000CBD5DA /* SwiftyJSON.swift in Sources */,

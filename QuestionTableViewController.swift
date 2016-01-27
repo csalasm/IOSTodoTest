@@ -24,7 +24,7 @@ class QuestionTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadQuestion("First")
-        print (test?.name)
+        print (test?.nombre)
         
 
         // Uncomment the following line to preserve selection between presentations
