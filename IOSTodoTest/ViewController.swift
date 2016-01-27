@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         
         let loginText = userTextField.text
         password = passwordTextField.text
+        loadActivityIndicatorView.startAnimating()
         
         loadActivityIndicatorView.startAnimating()
         if (loginText != "" && password != "") {
@@ -61,6 +62,10 @@ class ViewController: UIViewController {
                         self.showSimpleAlert()
                     }
                     else {
+                        let preguntaAction = PreguntaActions()
+                        preguntaAction.getPregunta("3") {(question: [Question]) -> Void in
+                            
+                        }
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewControllerWithIdentifier("TestList")
                         self.presentViewController(vc, animated: true, completion: nil)
