@@ -51,12 +51,20 @@ class ViewController: UIViewController {
         let loginText = userTextField.text
         password = passwordTextField.text
         
+        loadActivityIndicatorView.startAnimating()
         if (loginText != "" && password != "") {
             let usuarioActions = UsuarioActions()
-            
                 usuarioActions.userAuth(loginText!) { (usuario: Usuario) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
-                    print(usuario.apellidos)
+                    if usuario.dni != loginText || usuario.password != self.password {
+                        print("USUARIO/CONTRASEÑA INCORRECTA")
+                        self.showSimpleAlert()
+                    }
+                    else {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewControllerWithIdentifier("TestList")
+                        self.presentViewController(vc, animated: true, completion: nil)
+                    }
                     })
             
         }
@@ -64,16 +72,6 @@ class ViewController: UIViewController {
         else {
           showSimpleAlert()
         }
-        
-        /*loadActivityIndicatorView.startAnimating()
-        if loginText == "user" && passwordText == "00" {//usuario y contraseña correctas
-            
-            
-        }else{//usuario y contraseña incorrectas
-            
-            showSimpleAlert()
-            
-        }*/
         
     }
     
