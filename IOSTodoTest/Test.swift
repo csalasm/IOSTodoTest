@@ -17,7 +17,7 @@ class Test{
     var time:Int
     var tipo:String
     var fecha: NSDate
-    var arrayAnswers: [Answer]? //Array de preguntas
+    var arrayQuestions: [Question]? //Array de preguntas
     
     //Mark: Init
     
@@ -26,6 +26,6 @@ class Test{
         self.time = 0
         self.tipo = "No asignado"
         self.fecha = NSDate()
-        self.arrayAnswers = [Answer]()
+        self.arrayQuestions = [Question]()
         }
 }

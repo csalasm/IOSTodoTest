@@ -16,31 +16,20 @@ class ResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let load_alert:LoadingAlert = LoadingAlert(point: self.view.center)
         
-    
-        var alert: UIAlertView = UIAlertView(title: "Loading tests", message: "Please wait...", delegate: nil, cancelButtonTitle: nil);
-        
-        
-        var loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(50, 10, 37, 37)) as UIActivityIndicatorView
-        loadingIndicator.center = self.view.center;
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        loadingIndicator.startAnimating();
-        
-        alert.setValue(loadingIndicator, forKey: "accessoryView")
-        loadingIndicator.startAnimating()
-        
-        alert.show();
+        load_alert.show()
         
         let examenAction = ExamenActions()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         examenAction.getExamen(appDelegate.usuario!){(arrayExamenes: [Examen]) -> Void in
             dispatch_async(dispatch_get_main_queue()){
-                sleep(10)
+                sleep(5)
                 self.loadSampleResults()
                 self.tableView.reloadData()
-                alert.dismissWithClickedButtonIndex(-1, animated: true)
+                load_alert.hide()
+                //alert.dismissWithClickedButtonIndex(-1, animated: true)
                 
             }
         }
