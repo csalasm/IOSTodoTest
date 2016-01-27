@@ -13,17 +13,16 @@ class Examen {
    
     var DNI: String
     var ID_Test: String
-    var Fecha: NSDate
     var Aciertos: Int
     var Fallos: Int
     var Nota: Double
-    
-    init(dni: String, id: String, fecha: NSDate, aciertos: Int, fallos: Int, nota: Double) {
+    var fecha: String
+    init(dni: String, id: String,aciertos: Int, fallos: Int, nota: Double, fecha: String) {
         self.DNI = dni
         self.ID_Test = id
-        self.Fecha = fecha
         self.Aciertos = aciertos
         self.Fallos = fallos
         self.Nota = nota
+        self.fecha = fecha
     }
 }
