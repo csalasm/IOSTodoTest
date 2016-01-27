@@ -13,19 +13,23 @@ class Test{
     
     //Mark: Properties
     
-    var name:String
-    var time:Int
-    var tipo:String
-    var fecha: NSDate
-    var arrayQuestions: [Question]? //Array de preguntas
+    
+    var idTest:CLong
+    var nombre : String
+    var duracion :String
+    var resta :String
+    var activo:String
     
     //Mark: Init
     
-    init(name:String){
-        self.name = name
-        self.time = 0
-        self.tipo = "No asignado"
-        self.fecha = NSDate()
-        self.arrayQuestions = [Question]()
+    init(nombre:String,idTest:CLong,duracion :String,resta :String,activo:String){
+        
+         self.idTest = idTest
+         self.nombre = nombre
+         self.duracion = duracion
+         self.resta = resta
+         self.activo = activo
+       
+       
         }
 }
