@@ -27,11 +27,11 @@ class TestTableViewController: UITableViewController {
     }
     
     func loadSampleTest(){
-        let test1 = Test(name: "TestPrimero")
+        let test1 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
         
-        let test2 = Test(name: "TestSegundo")
+        let test2 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
         
-        let test3 = Test(name: "TestTercero")
+       let test3 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
         
         arrayTest += [test1,test2,test3]
     }
@@ -81,13 +81,13 @@ class TestTableViewController: UITableViewController {
         let test = arrayTest[indexPath.row]
         
         //Conversion Int => String
-        let xNSNumber = test.time as NSNumber
+        let xNSNumber = test.idTest as NSNumber
         let xString : String = xNSNumber.stringValue
         
-        cell.nameLabel.text = test.name
+        cell.nameLabel.text = test.nombre
         cell.timeLabel.text = xString
         
-        cell.typeLabel.text = test.tipo
+        cell.typeLabel.text = test.activo
         
         return cell
     }
@@ -144,9 +144,18 @@ class TestTableViewController: UITableViewController {
                 let indexPath = tableView.indexPathForCell(selectedTestCell)!
                 let selectedTest = arrayTest[indexPath.row]
                 questionTableViewController.test = selectedTest
+                
+                let testActions = TestActions()
+                
+               // testActions.testAuth("33333333A") {(testsArray:[Test]) -> Void in
+                    testActions.testAuth("33333333A") {(testArray:[Test]) -> Void in
+                
+                    
+                
+                
             }
         }
     }
-    
+    }
 
 }

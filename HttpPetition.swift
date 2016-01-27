@@ -9,7 +9,7 @@
 import Foundation
 
 class HttpPetition {
-    var host = "http://localhost"
+    var host = "http://192.168.1.137"
     var port = "8080"
     var path = "TodoTestWebWH/webresources/"
     var url:NSURL?
