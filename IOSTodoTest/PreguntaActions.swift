@@ -10,26 +10,22 @@ import Foundation
 
 class PreguntaActions{
     
-    var entity = "model.jpa.pregunta/"
+    var entity = "model.jpa.pregunta/test/"
     
     func getPregunta(idTest: String, callback: ([Question]) -> Void){
         let httpPetition = HttpPetition(resource: entity+idTest)
-        var pregunta: Question?
-        var preguntas: [Question]?
+        var preguntas: [Question] = [Question]()
         
         httpPetition.httpGet({ (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            //let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
         if data != nil{
             let json = JSON(data:data!)
-            pregunta = Question(text: json["texto"].stringValue, idPreg: json["idPregunta"].intValue)
-            
             //var i = json.count
-            
-            
-            for (i,subJson):(String, JSON) in json {
-                print(subJson[i]["texto"])
+            for (i,subJSON):(String, JSON) in json {
+                let pregunta = Question(text: subJSON["texto"].stringValue, idPreg: subJSON["idPregunta"].intValue)
+                preguntas.append(pregunta!)
             }
-            
-            callback(preguntas!)
+            callback(preguntas)
         }
     })
     

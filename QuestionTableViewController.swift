@@ -40,7 +40,7 @@ class QuestionTableViewController: UITableViewController {
         let ans3 = Answer(text: "Respuesta 3 "+index, isCorrect: false)
         var answerList = [Answer]()
         answerList += [ans1, ans2, ans3]
-        question = Question(text: "Texto de pregunta", arrayAnswers: answerList, image: nil)
+       // question = Question(text: "Texto de pregunta", arrayAnswers: answerList, image: nil)
         
     }
 
@@ -55,12 +55,12 @@ class QuestionTableViewController: UITableViewController {
 
         return 1
     }
-
+/*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (question?.arrayAnswers.count)!
     }
-
-    
+*/
+  /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "QuestionTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! QuestionTableViewCell
@@ -71,6 +71,7 @@ class QuestionTableViewController: UITableViewController {
 
         return cell
     }
+*/
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedRow = (tableView.indexPathForSelectedRow?.row)!

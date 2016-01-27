@@ -9,7 +9,7 @@
 import Foundation
 
 class HttpPetition {
-    var host = "http://localhost"
+    var host = "http://192.168.1.136"
     var port = "8080"
     var path = "TodoTestWebWH/webresources/"
     var url:NSURL?
@@ -20,7 +20,8 @@ class HttpPetition {
     }
     
     func httpGet(manageResponse: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request = NSURLRequest(URL: url!)
+        let request = NSMutableURLRequest(URL: url!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request, completionHandler: manageResponse)
         task.resume()

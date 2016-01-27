@@ -16,7 +16,8 @@ class Test{
     var name:String
     var time:Int
     var tipo:String
-    var arrayAnswers: [Question]? //Array de preguntas
+    var fecha: NSDate
+    var arrayAnswers: [Answer]? //Array de preguntas
     
     //Mark: Init
     
