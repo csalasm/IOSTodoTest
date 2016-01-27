@@ -29,18 +29,23 @@ class ExamenActions {
                 
                
                     let json = JSON(data: data!)
-                    examen = Examen(dni: json["DNI"].stringValue, id: json["id_test"].stringValue,
-                        fecha: (dateFormatter.dateFromString(json["fecha"].stringValue))!, aciertos: Int(json["aciertos"].stringValue)!, fallos: Int(json["fallos"].stringValue)!, nota: Double(json["nota"].stringValue)!)
+                
+                //If json is .Dictionary
+                for (key,subjson):(String, JSON) in json {
+                    //Do something you want
+                    examen = Examen(dni: subjson["DNI"].stringValue, id: subjson["id_test"].stringValue,
+                        fecha: (dateFormatter.dateFromString(subjson["fecha"].stringValue))!, aciertos: Int(subjson["aciertos"].stringValue)!, fallos: Int(subjson["fallos"].stringValue)!, nota: Double(subjson["nota"].stringValue)!)
+                }
+                
                     
                     arrayExamenes.append(examen!)
                     
                 }
-
             
-                
-                                callback(arrayExamenes)
+            print(arrayExamenes)
+
+        callback(arrayExamenes)
             
         })
     }
 }
-
