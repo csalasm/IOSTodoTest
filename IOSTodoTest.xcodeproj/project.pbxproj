@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		858A969C1C58BE6500F8FBF6 /* ExamenActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */; };
+		858A969E1C58BFB000F8FBF6 /* Examen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A969D1C58BFB000F8FBF6 /* Examen.swift */; };
 		859273FE1C5628470029C503 /* hacer_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FB1C5628470029C503 /* hacer_test.png */; };
 		859273FF1C5628470029C503 /* resultados.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FC1C5628470029C503 /* resultados.png */; };
 		859274001C5628470029C503 /* cerrar_sesion.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FD1C5628470029C503 /* cerrar_sesion.png */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamenActions.swift; sourceTree = "<group>"; };
+		858A969D1C58BFB000F8FBF6 /* Examen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Examen.swift; sourceTree = "<group>"; };
 		859273FB1C5628470029C503 /* hacer_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hacer_test.png; sourceTree = "<group>"; };
 		859273FC1C5628470029C503 /* resultados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultados.png; sourceTree = "<group>"; };
 		859273FD1C5628470029C503 /* cerrar_sesion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerrar_sesion.png; sourceTree = "<group>"; };
@@ -137,12 +141,14 @@
 				8DEBE2141C52A5B400F057DE /* Answer.swift */,
 				859274101C5770BC0029C503 /* Result.swift */,
 				E1BFAB5A1C522A9A00B6EDB7 /* Assets.xcassets */,
+				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
 				E1BFAB5C1C522A9A00B6EDB7 /* LaunchScreen.storyboard */,
 				E1BFAB5F1C522A9A00B6EDB7 /* Info.plist */,
 				E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */,
 				8D35BD261C58BEE60036D092 /* PreguntaActions.swift */,
 				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
-				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
+				858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */,
+				858A969D1C58BFB000F8FBF6 /* Examen.swift */,
 			);
 			path = IOSTodoTest;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 				859274061C56381C0029C503 /* TabBarController.swift in Sources */,
 				E1CB08321C576A5900CBD5DA /* HttpPetition.swift in Sources */,
 				E1D5D5EA1C57FE7B00D2FFB3 /* Usuario.swift in Sources */,
+				858A969E1C58BFB000F8FBF6 /* Examen.swift in Sources */,
 				E187E87B1C53A8AE0071D83B /* QuestionTableViewCell.swift in Sources */,
 				8D35BD271C58BEE60036D092 /* PreguntaActions.swift in Sources */,
 				8DEBE2111C52A01100F057DE /* TestTableViewCell.swift in Sources */,
@@ -239,6 +246,7 @@
 				8DEBE2131C52A33000F057DE /* Question.swift in Sources */,
 				8DEBE2151C52A5B400F057DE /* Answer.swift in Sources */,
 				E1CB08341C57790C00CBD5DA /* UsuarioActions.swift in Sources */,
+				858A969C1C58BE6500F8FBF6 /* ExamenActions.swift in Sources */,
 				859274021C5630290029C503 /* ResultsTableViewController.swift in Sources */,
 				E1CB08361C5783F000CBD5DA /* SwiftyJSON.swift in Sources */,
 				E1BFAB541C522A9A00B6EDB7 /* AppDelegate.swift in Sources */,

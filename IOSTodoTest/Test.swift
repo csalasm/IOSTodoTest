@@ -24,5 +24,7 @@ class Test{
         self.name = name
         self.time = 0
         self.tipo = "No asignado"
+        self.fecha = NSDate()
+        self.arrayAnswers = [Answer]()
         }
 }
