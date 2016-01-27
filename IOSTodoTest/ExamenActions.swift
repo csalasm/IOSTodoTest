@@ -27,7 +27,7 @@ class ExamenActions {
 
             if data != nil {
                 
-                for (key,subJson):(String, JSON) in json {
+               
                     let json = JSON(data: data!)
                     examen = Examen(dni: json["DNI"].stringValue, id: json["id_test"].stringValue,
                         fecha: (dateFormatter.dateFromString(json["fecha"].stringValue))!, aciertos: Int(json["aciertos"].stringValue)!, fallos: Int(json["fallos"].stringValue)!, nota: Double(json["nota"].stringValue)!)
@@ -36,7 +36,7 @@ class ExamenActions {
                     
                 }
 
-                }
+            
                 
                                 callback(arrayExamenes)
             
