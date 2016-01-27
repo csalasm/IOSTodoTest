@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         
         let loginText = userTextField.text
         password = passwordTextField.text
+        loadActivityIndicatorView.startAnimating()
         
         if (loginText != "" && password != "") {
             let usuarioActions = UsuarioActions()

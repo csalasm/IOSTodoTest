@@ -16,7 +16,7 @@ class Test{
     var name:String
     var time:Int
     var tipo:String
-    var arrayAnswers: [Answer]? //Array de preguntas
+    var arrayQuestions: [Question]? //Array de preguntas
     
     //Mark: Init
     

@@ -17,6 +17,7 @@ class Question {
     var text: String
     var arrayAnswers: [Answer]
     var image: UIImage?
+    var idPreg: Int
     
     
     init?(text:String,arrayAnswers:[Answer],image:UIImage?){
@@ -25,6 +26,9 @@ class Question {
         self.image = image
     }
 
-    
+    init?(text:String,idPreg:Int){
+        self.text = text
+        self.idPreg = idPreg
+    }
     
 }
