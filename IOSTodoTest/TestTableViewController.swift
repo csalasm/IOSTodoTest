@@ -18,8 +18,8 @@ class TestTableViewController: UITableViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         arrayTest = appDelegate.arrayTest!
-        print(arrayTest[0].nombre)
-        loadSampleTest()
+    
+     
      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,15 +28,7 @@ class TestTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func loadSampleTest(){
-        let test1 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-        let test2 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-       let test3 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-        //arrayTest += [test1,test2,test3]
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,14 +75,36 @@ class TestTableViewController: UITableViewController {
         let test = arrayTest[indexPath.row]
         
         //Conversion Int => String
-        let xNSNumber = test.idTest as NSNumber
-        let xString : String = xNSNumber.stringValue
+        let duracion = Int(test.duracion)!
+        let resta = Int(test.resta)!
+        
         
         cell.nameLabel.text = test.nombre
-        cell.timeLabel.text = xString
+        if duracion != 0 {
+            
+            let xNSNumber = duracion as NSNumber
+            let xString : String = xNSNumber.stringValue + " min"
+            cell.timeLabel.text = xString
         
-        cell.typeLabel.text = test.activo
+        } else{
+            
+            cell.timeLabel.text = "Sin tiempo"
+        }
         
+        
+        switch resta {
+        case 0:
+            cell.typeLabel.text = "los fallo no restan"
+        case 1:
+           cell.typeLabel.text = "1 fallo resta una respuesta correcta"
+        case 2:
+           cell.typeLabel.text = "2 fallos restan una respuesta correcta"
+        case 3:
+            cell.typeLabel.text = "3 fallo restan una respuesta correcta"
+        default: // el switch debe cubrir todos los valores posibles
+            print("otro")
+        }
+
         return cell
     }
     
