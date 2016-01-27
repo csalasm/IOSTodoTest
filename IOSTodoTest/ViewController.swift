@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         
         let loginText = userTextField.text
         password = passwordTextField.text
+        loadActivityIndicatorView.startAnimating()
         
         loadActivityIndicatorView.startAnimating()
         if (loginText != "" && password != "") {
@@ -61,9 +62,24 @@ class ViewController: UIViewController {
                         self.showSimpleAlert()
                     }
                     else {
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewControllerWithIdentifier("TestList")
-                        self.presentViewController(vc, animated: true, completion: nil)
+                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        appDelegate.usuario = usuario
+                        //let preguntaAction = PreguntaActions()
+                        let testAction = TestActions()
+                        testAction.testAuth(usuario.dni) { (arrayTest: [Test]) -> Void in
+                            dispatch_async(dispatch_get_main_queue(), {
+                                appDelegate.arrayTest = arrayTest
+                                
+                                
+                                // Despues de cargar los tests, cambiamos de ventana
+                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                let vcTest = storyboard.instantiateViewControllerWithIdentifier("TestList")
+                                self.presentViewController(vcTest, animated: true, completion: nil)
+                                
+                            })
+                        }
+                        
+                        
                     }
                     })
             

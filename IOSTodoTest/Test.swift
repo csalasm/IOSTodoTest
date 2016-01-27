@@ -20,10 +20,14 @@ class Test{
     
     //Mark: Init
     
-    init(name:String){
-        self.name = name
-        self.time = 0
-        self.tipo = "No asignado"
+    init(nombre:String,idTest:CLong,duracion :String,resta :String,activo:String){
         
+         self.idTest = idTest
+         self.nombre = nombre
+         self.duracion = duracion
+         self.resta = resta
+         self.activo = activo
+       
+       
         }
 }

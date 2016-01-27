@@ -16,8 +16,24 @@ class ResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let load_alert:LoadingAlert = LoadingAlert(point: self.view.center)
         
-        loadSampleResults()
+        load_alert.show()
+        
+        let examenAction = ExamenActions()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        examenAction.getExamen(appDelegate.usuario!){(arrayExamenes: [Examen]) -> Void in
+            dispatch_async(dispatch_get_main_queue()){
+                sleep(5)
+                self.loadSampleResults()
+                self.tableView.reloadData()
+                load_alert.hide()
+                //alert.dismissWithClickedButtonIndex(-1, animated: true)
+                
+            }
+        }
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
