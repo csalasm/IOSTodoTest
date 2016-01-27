@@ -17,12 +17,15 @@ class Examen {
     var Fallos: Int
     var Nota: Double
     var fecha: String
-    init(dni: String, id: String,aciertos: Int, fallos: Int, nota: Double, fecha: String) {
+    var nombre: String
+    
+    init(dni: String, id: String,aciertos: Int, fallos: Int, nota: Double, fecha: String,nombre:String) {
         self.DNI = dni
         self.ID_Test = id
         self.Aciertos = aciertos
         self.Fallos = fallos
         self.Nota = nota
         self.fecha = fecha
+        self.nombre = nombre
     }
 }

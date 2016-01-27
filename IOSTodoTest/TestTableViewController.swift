@@ -19,7 +19,7 @@ class TestTableViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         arrayTest = appDelegate.arrayTest!
         print(arrayTest[0].nombre)
-        loadSampleTest()
+        //loadSampleTest()
      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,7 +28,7 @@ class TestTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func loadSampleTest(){
+    /*func loadSampleTest(){
         let test1 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
         
         let test2 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
@@ -36,7 +36,7 @@ class TestTableViewController: UITableViewController {
        let test3 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
         
         //arrayTest += [test1,test2,test3]
-    }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
