@@ -41,7 +41,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
                 self.sidebar.dismissAnimated(true, completion: { finished in self.selectedIndex = 1})
 },
             2: {self.sidebar.dismissAnimated(true, completion: { finished in self.selectedIndex = 2})
-            
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.usuario = nil
+                appDelegate.arrayTest = nil
+                appDelegate.currentTest = nil
                 
             },
         ]

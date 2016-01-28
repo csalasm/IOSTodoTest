@@ -79,12 +79,6 @@ class ResultsTableViewController: UITableViewController {
         cell.scoreLabel.text = String(result.Nota)
         cell.DateLabel.text = parseDate(result.fecha)
         
-        /*let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = result.fecha.substringToIndex(result.fecha.endIndex.advancedBy(9))
-        let mifecha = dateFormatter.dateFromString(date)!
-        print(date)*/
-        //cell.DateLabel.text = String(mifecha)
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = UIColor.grayColor().CGColor
         return cell

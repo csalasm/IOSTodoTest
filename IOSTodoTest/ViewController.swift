@@ -78,7 +78,6 @@ class ViewController: UIViewController {
                 usuarioActions.userAuth(loginText!) { (usuario: Usuario) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
                     if usuario.dni != loginText || usuario.password != self.password {
-                        print("USUARIO/CONTRASEÑA INCORRECTA")
                         self.showSimpleAlert()
                     }
                     else {
@@ -89,7 +88,6 @@ class ViewController: UIViewController {
                         testAction.testAuth(usuario.dni) { (arrayTest: [Test]) -> Void in
                             dispatch_async(dispatch_get_main_queue(), {
                                 appDelegate.arrayTest = arrayTest
-                                
                                 
                                 // Despues de cargar los tests, cambiamos de ventana
                                 let storyboard = UIStoryboard(name: "Main", bundle: nil)

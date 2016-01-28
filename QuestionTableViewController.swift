@@ -218,8 +218,6 @@ class QuestionTableViewController: UITableViewController {
     }
     
     func calcMark(correct: Int, fail:Int, numQuestions: Int) {
-        print(correct)
-        print(fail)
         var mark = 0.0
         let answerMark = 10.0 / Double(numQuestions)
         
