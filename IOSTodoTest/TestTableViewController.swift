@@ -28,24 +28,8 @@ class TestTableViewController: UITableViewController {
 
         arrayTest = appDelegate.arrayTest!
         //print(arrayTest[0].nombre)
-        //loadSampleTest()
-     
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    /*func loadSampleTest(){
-        let test1 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-        let test2 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-       let test3 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-        //arrayTest += [test1,test2,test3]
-    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -125,6 +109,8 @@ class TestTableViewController: UITableViewController {
         
         // Recuperamos las preguntas del test
         let preguntaActions = PreguntaActions()
+        let loadingAlert = LoadingAlert(point: self.view.center)
+        loadingAlert.show()
         preguntaActions.getPregunta(String(selectedTest.idTest)) { (arrayQuestions: [Question]) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 let questionGroup = dispatch_group_create()
@@ -143,7 +129,7 @@ class TestTableViewController: UITableViewController {
                 }
                 dispatch_group_wait(questionGroup, DISPATCH_TIME_FOREVER)
                 dispatch_group_notify(questionGroup, dispatch_get_main_queue(), {
-                    print("POR AQUI")
+                    loadingAlert.hide()
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vcPregunta = storyboard.instantiateViewControllerWithIdentifier("QuestionTableView")
                     self.presentViewController(vcPregunta, animated: true, completion: nil)

@@ -22,11 +22,9 @@
 		859273FF1C5628470029C503 /* resultados.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FC1C5628470029C503 /* resultados.png */; };
 		859274001C5628470029C503 /* cerrar_sesion.png in Resources */ = {isa = PBXBuildFile; fileRef = 859273FD1C5628470029C503 /* cerrar_sesion.png */; };
 		859274021C5630290029C503 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274011C5630290029C503 /* ResultsTableViewController.swift */; };
-		859274041C56339D0029C503 /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 859274031C56339D0029C503 /* Background.jpg */; };
 		859274061C56381C0029C503 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274051C56381C0029C503 /* TabBarController.swift */; };
 		859274081C5638970029C503 /* FrostedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274071C5638970029C503 /* FrostedSidebar.swift */; };
 		8592740E1C576E880029C503 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592740D1C576E880029C503 /* ResultsTableViewCell.swift */; };
-		859274111C5770BC0029C503 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859274101C5770BC0029C503 /* Result.swift */; };
 		8D35BD271C58BEE60036D092 /* PreguntaActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35BD261C58BEE60036D092 /* PreguntaActions.swift */; };
 		8D35BD2B1C592C640036D092 /* LoadingAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35BD2A1C592C640036D092 /* LoadingAlert.swift */; };
 		8D9625DD1C578DCB00E197F1 /* final_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9625DC1C578DCB00E197F1 /* final_banner.png */; };
@@ -37,7 +35,6 @@
 		8DEBE2171C52AC1D00F057DE /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */; };
 		8DEBE2191C52B30B00F057DE /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBE2181C52B30B00F057DE /* TestViewController.swift */; };
 		BDCDAD601C58C06400E46090 /* TestActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDAD5F1C58C06400E46090 /* TestActions.swift */; };
-		E16FD2871C56439D004271D9 /* pythagorean_theorem1.gif in Resources */ = {isa = PBXBuildFile; fileRef = E16FD2861C56439D004271D9 /* pythagorean_theorem1.gif */; };
 		E187E87B1C53A8AE0071D83B /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E87A1C53A8AE0071D83B /* QuestionTableViewCell.swift */; };
 		E187E87E1C53AD5D0071D83B /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */; };
 		E187E87F1C53AD5D0071D83B /* QuestionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E187E87D1C53AD5D0071D83B /* QuestionTableViewController.xib */; };
@@ -69,11 +66,9 @@
 		859273FC1C5628470029C503 /* resultados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultados.png; sourceTree = "<group>"; };
 		859273FD1C5628470029C503 /* cerrar_sesion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerrar_sesion.png; sourceTree = "<group>"; };
 		859274011C5630290029C503 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
-		859274031C56339D0029C503 /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		859274051C56381C0029C503 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ../TabBarController.swift; sourceTree = "<group>"; };
 		859274071C5638970029C503 /* FrostedSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrostedSidebar.swift; path = ../FrostedSidebar.swift; sourceTree = "<group>"; };
 		8592740D1C576E880029C503 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsTableViewCell.swift; path = ../ResultsTableViewCell.swift; sourceTree = "<group>"; };
-		859274101C5770BC0029C503 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8D35BD261C58BEE60036D092 /* PreguntaActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreguntaActions.swift; sourceTree = "<group>"; };
 		8D35BD2A1C592C640036D092 /* LoadingAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAlert.swift; sourceTree = "<group>"; };
 		8D9625DC1C578DCB00E197F1 /* final_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = final_banner.png; sourceTree = "<group>"; };
@@ -84,7 +79,6 @@
 		8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		8DEBE2181C52B30B00F057DE /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BDCDAD5F1C58C06400E46090 /* TestActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestActions.swift; sourceTree = "<group>"; };
-		E16FD2861C56439D004271D9 /* pythagorean_theorem1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pythagorean_theorem1.gif; sourceTree = "<group>"; };
 		E187E87A1C53A8AE0071D83B /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTableViewCell.swift; path = ../QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTableViewController.swift; path = ../QuestionTableViewController.swift; sourceTree = "<group>"; };
 		E187E87D1C53AD5D0071D83B /* QuestionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionTableViewController.xib; path = ../QuestionTableViewController.xib; sourceTree = "<group>"; };
@@ -124,15 +118,72 @@
 				8D9625DC1C578DCB00E197F1 /* final_banner.png */,
 				858A96B21C5A3CB700F8FBF6 /* calendar_icon.png */,
 				858A96AE1C5A399500F8FBF6 /* 1454003755_thumbs-down.png */,
-				E16FD2861C56439D004271D9 /* pythagorean_theorem1.gif */,
 				859273FB1C5628470029C503 /* hacer_test.png */,
 				858A96A81C5A333600F8FBF6 /* logoIOS.png */,
-				859274031C56339D0029C503 /* Background.jpg */,
 				858A96AC1C5A398F00F8FBF6 /* 1454003765_thumbs-up.png */,
 				859273FC1C5628470029C503 /* resultados.png */,
 				859273FD1C5628470029C503 /* cerrar_sesion.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E15E32FF1C5A9918002A0DDB /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */,
+				BDCDAD5F1C58C06400E46090 /* TestActions.swift */,
+				E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */,
+				8D35BD261C58BEE60036D092 /* PreguntaActions.swift */,
+				E1D5D5EB1C59334A00D2FFB3 /* RespuestaActions.swift */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		E15E33001C5A9982002A0DDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
+				858A969D1C58BFB000F8FBF6 /* Examen.swift */,
+				8DEBE20E1C529E8300F057DE /* Test.swift */,
+				8DEBE2141C52A5B400F057DE /* Answer.swift */,
+				8DEBE2121C52A33000F057DE /* Question.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E15E33011C5A99C6002A0DDB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				859274071C5638970029C503 /* FrostedSidebar.swift */,
+				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
+				E1CB08311C576A5900CBD5DA /* HttpPetition.swift */,
+				8D35BD2A1C592C640036D092 /* LoadingAlert.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		E15E33031C5A9A2B002A0DDB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1BFAB551C522A9A00B6EDB7 /* ViewController.swift */,
+				859274051C56381C0029C503 /* TabBarController.swift */,
+				8592740D1C576E880029C503 /* ResultsTableViewCell.swift */,
+				8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */,
+				E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */,
+				E187E87D1C53AD5D0071D83B /* QuestionTableViewController.xib */,
+				859274011C5630290029C503 /* ResultsTableViewController.swift */,
+				8DEBE2181C52B30B00F057DE /* TestViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E15E33041C5A9A72002A0DDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */,
+				E187E87A1C53A8AE0071D83B /* QuestionTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E1BFAB471C522A9A00B6EDB7 = {
@@ -154,37 +205,17 @@
 		E1BFAB521C522A9A00B6EDB7 /* IOSTodoTest */ = {
 			isa = PBXGroup;
 			children = (
-				E1CB08311C576A5900CBD5DA /* HttpPetition.swift */,
-				859274071C5638970029C503 /* FrostedSidebar.swift */,
-				859274051C56381C0029C503 /* TabBarController.swift */,
+				E15E33041C5A9A72002A0DDB /* Views */,
+				E15E33031C5A9A2B002A0DDB /* Controllers */,
+				E15E33011C5A99C6002A0DDB /* Utils */,
+				E15E33001C5A9982002A0DDB /* Model */,
+				E15E32FF1C5A9918002A0DDB /* Actions */,
 				E1BFAB531C522A9A00B6EDB7 /* AppDelegate.swift */,
-				E1BFAB551C522A9A00B6EDB7 /* ViewController.swift */,
 				852AB0781C5559F600DCFE7D /* Supporting Files */,
 				E1BFAB571C522A9A00B6EDB7 /* Main.storyboard */,
-				859274011C5630290029C503 /* ResultsTableViewController.swift */,
-				8D35BD2A1C592C640036D092 /* LoadingAlert.swift */,
-				8592740D1C576E880029C503 /* ResultsTableViewCell.swift */,
-				8DEBE2101C52A01100F057DE /* TestTableViewCell.swift */,
-				8DEBE2161C52AC1D00F057DE /* TestTableViewController.swift */,
-				8DEBE2181C52B30B00F057DE /* TestViewController.swift */,
-				E187E87A1C53A8AE0071D83B /* QuestionTableViewCell.swift */,
-				E187E87C1C53AD5D0071D83B /* QuestionTableViewController.swift */,
-				E187E87D1C53AD5D0071D83B /* QuestionTableViewController.xib */,
-				8DEBE2121C52A33000F057DE /* Question.swift */,
-				8DEBE2141C52A5B400F057DE /* Answer.swift */,
-				8DEBE20E1C529E8300F057DE /* Test.swift */,
-				859274101C5770BC0029C503 /* Result.swift */,
 				E1BFAB5A1C522A9A00B6EDB7 /* Assets.xcassets */,
 				E1BFAB5C1C522A9A00B6EDB7 /* LaunchScreen.storyboard */,
 				E1BFAB5F1C522A9A00B6EDB7 /* Info.plist */,
-				E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */,
-				8D35BD261C58BEE60036D092 /* PreguntaActions.swift */,
-				E1D5D5EB1C59334A00D2FFB3 /* RespuestaActions.swift */,
-				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
-				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
-				BDCDAD5F1C58C06400E46090 /* TestActions.swift */,
-				858A969B1C58BE6500F8FBF6 /* ExamenActions.swift */,
-				858A969D1C58BFB000F8FBF6 /* Examen.swift */,
 			);
 			path = IOSTodoTest;
 			sourceTree = "<group>";
@@ -251,7 +282,6 @@
 				E1BFAB5E1C522A9A00B6EDB7 /* LaunchScreen.storyboard in Resources */,
 				858A96A91C5A333600F8FBF6 /* logoIOS.png in Resources */,
 				858A96A51C5A26C400F8FBF6 /* burger@2x.png in Resources */,
-				859274041C56339D0029C503 /* Background.jpg in Resources */,
 				858A96B71C5A3D5A00F8FBF6 /* icon_failures.png in Resources */,
 				8D9625DD1C578DCB00E197F1 /* final_banner.png in Resources */,
 				858A96AF1C5A399500F8FBF6 /* 1454003755_thumbs-down.png in Resources */,
@@ -262,7 +292,6 @@
 				E1BFAB5B1C522A9A00B6EDB7 /* Assets.xcassets in Resources */,
 				858A96AB1C5A33CC00F8FBF6 /* Captura de pantalla 2016-01-28 a las 12.31.35.png in Resources */,
 				E1BFAB591C522A9A00B6EDB7 /* Main.storyboard in Resources */,
-				E16FD2871C56439D004271D9 /* pythagorean_theorem1.gif in Resources */,
 				E187E87F1C53AD5D0071D83B /* QuestionTableViewController.xib in Resources */,
 				858A96B61C5A3D5A00F8FBF6 /* icon_succeses.png in Resources */,
 				858A96AD1C5A398F00F8FBF6 /* 1454003765_thumbs-up.png in Resources */,
@@ -288,7 +317,6 @@
 				E187E87B1C53A8AE0071D83B /* QuestionTableViewCell.swift in Sources */,
 				8D35BD271C58BEE60036D092 /* PreguntaActions.swift in Sources */,
 				8DEBE2111C52A01100F057DE /* TestTableViewCell.swift in Sources */,
-				859274111C5770BC0029C503 /* Result.swift in Sources */,
 				8DEBE2191C52B30B00F057DE /* TestViewController.swift in Sources */,
 				8DEBE2131C52A33000F057DE /* Question.swift in Sources */,
 				8DEBE2151C52A5B400F057DE /* Answer.swift in Sources */,

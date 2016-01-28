@@ -25,38 +25,22 @@ class ExamenActions {
             var arrayExamenes: [Examen] = [Examen]()
 
             if data != nil {
-                
-                
-                let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                
-                print("EXAMEN")
-                print(reply)
+                //let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                //print(reply)
                 let json = JSON(data: data!)
                 
                 //If json is .Dictionary
-                for (key,subjson):(String, JSON) in json {
+                for (_,subjson):(String, JSON) in json {
                     //Do something you want
                     examen = Examen(dni: subjson["examenPk"]["dni"].stringValue, id: subjson["examenPK"]["idTest"].stringValue,
                         aciertos: Int(subjson["aciertos"].stringValue)!,
                         fallos: Int(subjson["fallos"].stringValue)!, nota: Double(subjson["nota"].stringValue)!, fecha: subjson["fecha"].stringValue, nombre: subjson["test"]["nombre"].stringValue)
-                    print(examen?.ID_Test)
+                    
                         arrayExamenes.append(examen!)
                 }
                 //dateFormatter.dateFromString(subjson["fecha"].stringValue))
-                    
-                
-         
-                
                 }
-            for examen in arrayExamenes{
-                
-                print(examen.ID_Test)
-                print(examen.fecha)
-                
-            }
-            
-
-        callback(arrayExamenes)
+            callback(arrayExamenes)
             
         })
     }

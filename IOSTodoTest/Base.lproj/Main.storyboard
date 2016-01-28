@@ -115,17 +115,16 @@
                             <rect key="frame" x="0.0" y="64" width="320" height="172"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" id="mzT-5g-abb">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Pregunta" textAlignment="natural" id="mzT-5g-abb">
                                     <rect key="frame" x="8" y="8" width="304" height="70"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <string key="text">jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv jgvujvjbh jkhbjbjhb jhbjhbk jgvujvjbhjkhbj bjhbjhbjhbk sdf d jgv </string>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="240" image="pythagorean_theorem1.gif" id="eon-Bo-gs1">
                                     <rect key="frame" x="100" y="91" width="109" height="61"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,7 +289,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UcV-zO-EXh">
-                                            <rect key="frame" x="131" y="8" width="163" height="21"/>
+                                            <rect key="frame" x="131" y="8" width="185" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -356,7 +355,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vy-jR-Mus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="-61.533333333333331"/>
+            <point key="canvasLocation" x="920" y="-62"/>
         </scene>
         <!--Item-->
         <scene sceneID="QgL-wx-bot">

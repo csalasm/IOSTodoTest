@@ -33,11 +33,6 @@ class ResultsTableViewController: UITableViewController {
                 self.arrayResults = arrayExamenes
                 self.tableView.reloadData()
                 load_alert.hide()
-                for examen in arrayExamenes{
-                    print("ID DEL EXAMEN")
-                    print(examen.ID_Test)
-                }
-                
             }
         }
 
@@ -82,7 +77,7 @@ class ResultsTableViewController: UITableViewController {
         cell.successesLabel.text = String(result.Aciertos)
         cell.failuresLabel.text = String(result.Fallos)
         cell.scoreLabel.text = String(result.Nota)
-        cell.DateLabel.text = result.fecha
+        cell.DateLabel.text = parseDate(result.fecha)
         
         /*let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -151,22 +146,16 @@ class ResultsTableViewController: UITableViewController {
 
     }
     
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    func loadSampleResults(arrayExamen : [Examen]){
+    // MARK: Utils function
+    func parseDate(date: String) ->String {
+        var split1 = date.componentsSeparatedByString("T")
+        var split2 = split1[0].componentsSeparatedByString("-")
         
-        /*for examen in arrayExamen {
-            
-        arrayResults.append(examen)
+        let anio = split2[0]
+        let mes = split2[1]
+        let dia = split2[2]
         
-        }
-        
-        arrayResults += [res1,res2,res3]*/
+        return dia+"-"+mes+"-"+anio
     }
 
 }

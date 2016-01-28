@@ -263,14 +263,16 @@ class QuestionTableViewController: UITableViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         // Create the action.
+        let loadingAlert = LoadingAlert(point: self.view.center)
+        
         let okAction = UIAlertAction(title: cancelButtonTitle, style: .Default) { action in
-            
+            loadingAlert.show()
             let testAction = TestActions()
             testAction.testAuth((self.appDelegate?.usuario?.dni)!) { (arrayTest: [Test]) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
                     self.appDelegate!.arrayTest = arrayTest
                     
-                    
+                    loadingAlert.hide()
                     // Despues de cargar los tests, cambiamos de ventana
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vcTest = storyboard.instantiateViewControllerWithIdentifier("TestList")

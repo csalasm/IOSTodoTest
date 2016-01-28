@@ -17,12 +17,12 @@ class PreguntaActions{
         var preguntas: [Question] = [Question]()
         
         httpPetition.httpGet({ (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            //let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
             //print(reply)
         if data != nil{
             let json = JSON(data:data!)
             //var i = json.count
-            for (i,subJSON):(String, JSON) in json {
+            for (_,subJSON):(String, JSON) in json {
                 let pregunta = Question(text: subJSON["texto"].stringValue, idPreg: subJSON["idPregunta"].intValue, arrayAnswer: nil, image: subJSON["imagen"].stringValue)
                 preguntas.append(pregunta!)
             }

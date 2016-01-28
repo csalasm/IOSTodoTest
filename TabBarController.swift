@@ -33,20 +33,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             selectionStyle: .Single)
         sidebar.actionForIndex = [
             0: {self.sidebar.dismissAnimated(true, completion: { finished in self.selectedIndex = 0})
-            
-            print("HE PULSADO 1")
             },
             
             
             1: {
                 
-                print("HE PULSADO 2")
                 self.sidebar.dismissAnimated(true, completion: { finished in self.selectedIndex = 1})
-               
-                
 },
-            
-            
             2: {self.sidebar.dismissAnimated(true, completion: { finished in self.selectedIndex = 2})
             
                 

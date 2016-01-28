@@ -13,7 +13,7 @@ class LoadingAlert{
     
     //MARK: Properties
     
-    var alert: UIAlertView = UIAlertView(title: "Loading tests", message: "Please wait...", delegate: nil, cancelButtonTitle: nil)
+    var alert: UIAlertView = UIAlertView(title: "Cargando", message: "Por favor, espere...", delegate: nil, cancelButtonTitle: nil)
     
     
     var loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(50, 10, 37, 37)) as UIActivityIndicatorView
