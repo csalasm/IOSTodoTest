@@ -127,7 +127,6 @@ class TestTableViewController: UITableViewController {
                         dispatch_group_leave(questionGroup)
                     }
                 }
-                dispatch_group_wait(questionGroup, DISPATCH_TIME_FOREVER)
                 dispatch_group_notify(questionGroup, dispatch_get_main_queue(), {
                     loadingAlert.hide()
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
