@@ -12,6 +12,7 @@ import Foundation
 
 class ExamenActions {
     var entity = "model.jpa.usuario/examen/"
+    var examEntity = "model.jpa.examen"
     
     func getExamen(usuario: Usuario, callback: ([Examen]) -> Void){ //Nombre test, duracion, tiempo del examen
         
@@ -56,5 +57,20 @@ class ExamenActions {
         callback(arrayExamenes)
             
         })
+    }
+    
+    func saveExamen(examen: Examen, callback: (Void) -> Void) {
+        let httpPetition = HttpPetition(resource: examEntity)
+        do {
+            let jsonExamen = try NSJSONSerialization.dataWithJSONObject(examen.getInDictionary(), options: NSJSONWritingOptions.PrettyPrinted)
+            let stringData = NSString(data: jsonExamen, encoding: NSUTF8StringEncoding)
+            httpPetition.httpPost(stringData as! String, manageResponse: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+                callback()
+            })
+        }catch let error as NSError{
+            print(error.description)
+        }
+
+        
     }
 }

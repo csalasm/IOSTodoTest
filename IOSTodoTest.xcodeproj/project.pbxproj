@@ -41,6 +41,7 @@
 		E1CB08341C57790C00CBD5DA /* UsuarioActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */; };
 		E1CB08361C5783F000CBD5DA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */; };
 		E1D5D5EA1C57FE7B00D2FFB3 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */; };
+		E1D5D5EC1C59334A00D2FFB3 /* RespuestaActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5D5EB1C59334A00D2FFB3 /* RespuestaActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioActions.swift; sourceTree = "<group>"; };
 		E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		E1D5D5EB1C59334A00D2FFB3 /* RespuestaActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RespuestaActions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,11 +148,11 @@
 				8DEBE20E1C529E8300F057DE /* Test.swift */,
 				859274101C5770BC0029C503 /* Result.swift */,
 				E1BFAB5A1C522A9A00B6EDB7 /* Assets.xcassets */,
-				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
 				E1BFAB5C1C522A9A00B6EDB7 /* LaunchScreen.storyboard */,
 				E1BFAB5F1C522A9A00B6EDB7 /* Info.plist */,
 				E1CB08331C57790C00CBD5DA /* UsuarioActions.swift */,
 				8D35BD261C58BEE60036D092 /* PreguntaActions.swift */,
+				E1D5D5EB1C59334A00D2FFB3 /* RespuestaActions.swift */,
 				E1D5D5E91C57FE7B00D2FFB3 /* Usuario.swift */,
 				E1CB08351C5783F000CBD5DA /* SwiftyJSON.swift */,
 				BDCDAD5F1C58C06400E46090 /* TestActions.swift */,
@@ -240,6 +242,7 @@
 			files = (
 				859274081C5638970029C503 /* FrostedSidebar.swift in Sources */,
 				E1BFAB561C522A9A00B6EDB7 /* ViewController.swift in Sources */,
+				E1D5D5EC1C59334A00D2FFB3 /* RespuestaActions.swift in Sources */,
 				8592740E1C576E880029C503 /* ResultsTableViewCell.swift in Sources */,
 				859274061C56381C0029C503 /* TabBarController.swift in Sources */,
 				E1CB08321C576A5900CBD5DA /* HttpPetition.swift in Sources */,

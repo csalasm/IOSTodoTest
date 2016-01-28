@@ -14,8 +14,10 @@ class Answer{
     //Mark: Properties
     var text:String
     var isCorrect:Bool
+    var id: Int
     
-    init(text:String,isCorrect: Bool){
+    init(id: Int, text:String,isCorrect: Bool){
+        self.id = id
         self.text = text
         self.isCorrect = isCorrect
     }

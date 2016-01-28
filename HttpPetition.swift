@@ -9,7 +9,7 @@
 import Foundation
 
 class HttpPetition {
-    var host = "http://192.168.1.136"
+    var host = "http://localhost"
     var port = "8080"
     var path = "TodoTestWebWH/webresources/"
     var url:NSURL?
@@ -28,8 +28,11 @@ class HttpPetition {
 
     }
     
-    func httpPost(manageResponse: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let request = NSURLRequest(URL: url!)
+    func httpPost(examen: String, manageResponse: (NSData?, NSURLResponse?, NSError?) -> Void) {
+        let request = NSMutableURLRequest(URL: url!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
+        request.HTTPMethod = "POST"
+        request.HTTPBody = examen.dataUsingEncoding(NSUTF8StringEncoding)
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request, completionHandler: manageResponse)

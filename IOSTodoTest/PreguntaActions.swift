@@ -22,7 +22,7 @@ class PreguntaActions{
             let json = JSON(data:data!)
             //var i = json.count
             for (i,subJSON):(String, JSON) in json {
-                let pregunta = Question(text: subJSON["texto"].stringValue, idPreg: subJSON["idPregunta"].intValue)
+                let pregunta = Question(text: subJSON["texto"].stringValue, idPreg: subJSON["idPregunta"].intValue, arrayAnswer: nil, image: subJSON["imagen"].stringValue)
                 preguntas.append(pregunta!)
             }
             callback(preguntas)

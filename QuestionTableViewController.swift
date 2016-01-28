@@ -11,36 +11,40 @@ import UIKit
 class QuestionTableViewController: UITableViewController {
     
     // MARK: Properties
-    var question: Question?
+    //var question: Question?
     var test: Test?
+    var prueba = "Probando"
+    var currentQuestion = 0
+    var userAnswers: [Answer] = [Answer]()
     
     // MARK: Management variables
     var selectedRow: Int = 0
+    var appDelegate: AppDelegate?
         
     
     @IBOutlet weak var questionText: UITextView!
+    @IBOutlet weak var questionImage: UIImageView!
     
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadQuestion("First")
-        print (test?.nombre)
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        questionImage.hidden = true
+        nextButton.enabled = false
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate;
+        test = appDelegate?.currentTest
+        loadQuestion()
     }
     
-    func loadQuestion(index: String) {
-        let ans1 = Answer(text: "Respuesta 1 "+index, isCorrect: true)
-        let ans2 = Answer(text: "Respuesta 2 "+index, isCorrect: false)
-        let ans3 = Answer(text: "Respuesta 3 "+index, isCorrect: false)
-        var answerList = [Answer]()
-        answerList += [ans1, ans2, ans3]
-       // question = Question(text: "Texto de pregunta", arrayAnswers: answerList, image: nil)
+    func loadQuestion() {
+        // Titulo de la pregunta
+        questionText.text = test!.arrayQuestions![0].text
+        let imageB64 = test?.arrayQuestions![0].image
+        if imageB64 != nil {
+            let imageData = NSData(base64EncodedString: imageB64!, options: .IgnoreUnknownCharacters)
+            let image = UIImage(data: imageData!)
+            questionImage.image = image
+            questionImage.hidden = false
+        }
         
     }
 
@@ -55,26 +59,28 @@ class QuestionTableViewController: UITableViewController {
 
         return 1
     }
-/*
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (question?.arrayAnswers.count)!
+        return (test?.arrayQuestions![currentQuestion].arrayAnswers?.count)!
+
     }
-*/
-  /*
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "QuestionTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! QuestionTableViewCell
-        let answer = question?.arrayAnswers[indexPath.row]
-        cell.questionLabel.text = answer?.text
-
+        let answer = test?.arrayQuestions![currentQuestion].arrayAnswers?[indexPath.row]
+        cell.answerText.text = answer?.text
         // Configure the cell...
 
         return cell
     }
-*/
+
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        nextButton.enabled = true
         selectedRow = (tableView.indexPathForSelectedRow?.row)!
+        let response = test?.arrayQuestions![currentQuestion].arrayAnswers![selectedRow]
+        userAnswers.insert(response!, atIndex: currentQuestion)
         resetChecks()
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
             if cell.accessoryType == .Checkmark {
@@ -86,6 +92,7 @@ class QuestionTableViewController: UITableViewController {
         }
         
     }
+    
     
     func resetChecks()
     {
@@ -151,12 +158,100 @@ class QuestionTableViewController: UITableViewController {
     // MARK: Action
     
     @IBAction func nextQuestion(sender: UIBarButtonItem) {
-        print("SIGUIENTE PREGUNTA")
-        questionText.text = "SIGUIENTE PREGUNTA"
-       loadQuestion("Second")
+        currentQuestion++
+        if currentQuestion < test?.arrayQuestions?.count {
+            nextButton.enabled = false
+            questionText.text = test?.arrayQuestions![currentQuestion].text
+            let imageB64 = test?.arrayQuestions![currentQuestion].image
+            if imageB64 != nil {
+                let imageData = NSData(base64EncodedString: imageB64!, options: .IgnoreUnknownCharacters)
+                let image = UIImage(data: imageData!)
+                questionImage.image = image
+                questionImage.hidden = false
+            }
+            else {
+                questionImage.hidden = true
+            }
+            
+        }
+        else {
+            correctTest()
+            return;
+        }
+        if currentQuestion == (test?.arrayQuestions?.count)!-1 {
+            nextButton.title = "Finalizar"
+        }
+
         tableView.reloadData()
-        print(selectedRow)
+        //print(selectedRow)
         resetChecks()
+    }
+    
+    // MARK: Manage Test
+    func correctTest() {
+        var correct = 0
+        var fail = 0
+        
+        // Si ha seleccionado preguntas
+        if userAnswers.count > 0 {
+            var i = 0
+            for question in (test?.arrayQuestions)! {
+                var correctAnswer: Answer?
+                // Buscamos cual era la respuesta correcta
+                for answer in (question.arrayAnswers)! {
+                    if answer.isCorrect {
+                        correctAnswer = answer
+                    }
+                    
+                }
+                // Comprobamos si acertó o falló
+                if correctAnswer!.id == userAnswers[i].id {
+                    correct++
+                } else {
+                    fail++
+                }
+                i++
+                
+            }
+        }
+        calcMark(correct, fail: fail, numQuestions: (test?.arrayQuestions?.count)!)
+    }
+    
+    func calcMark(correct: Int, fail:Int, numQuestions: Int) {
+        print(correct)
+        print(fail)
+        var mark = 0.0
+        let answerMark = 10.0 / Double(numQuestions)
+        
+        if test?.resta == "0" {
+            mark = answerMark * Double(correct)
+        } else {
+            if (test?.resta)! == "1" {
+                mark = (answerMark * Double(correct)) - (answerMark * Double(fail));
+            } else {
+                mark = (answerMark * Double(correct)) - (answerMark * Double(fail) / Double((test?.resta)!)!)
+            }
+        }
+        
+        mark = round(mark*100.0)/100.0;
+        if mark < 0 {
+            mark = 0
+        }
+        
+        // Guardar resultados
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let fecha = dateFormatter.stringFromDate(NSDate())
+        let examen = Examen(dni: (appDelegate?.usuario!.dni)!,
+            id: String(test!.idTest), aciertos: correct, fallos: fail, nota: mark, fecha: fecha)
+        let examenActions = ExamenActions()
+        examenActions.saveExamen(examen) { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                    
+            })
+        }
+        
+        
     }
     
 }

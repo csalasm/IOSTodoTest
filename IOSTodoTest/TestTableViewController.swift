@@ -18,24 +18,12 @@ class TestTableViewController: UITableViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         arrayTest = appDelegate.arrayTest!
-        print(arrayTest[0].nombre)
-        loadSampleTest()
      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    func loadSampleTest(){
-        let test1 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-        let test2 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-       let test3 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
-        
-        //arrayTest += [test1,test2,test3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,12 +74,43 @@ class TestTableViewController: UITableViewController {
         let xNSNumber = test.idTest as NSNumber
         let xString : String = xNSNumber.stringValue
         
-        cell.nameLabel.text = test.nombre
+        cell.nameLabel.text = test.name
         cell.timeLabel.text = xString
         
-        cell.typeLabel.text = test.activo
+        cell.typeLabel.text = test.name
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedTest = arrayTest[indexPath.row]
+        
+        // Recuperamos las preguntas del test
+        let preguntaActions = PreguntaActions()
+        preguntaActions.getPregunta(String(selectedTest.idTest)) { (arrayQuestions: [Question]) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                let questionGroup = dispatch_group_create()
+              // Obtenemos AppDelegate
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                // Recuperamos las respuestas para cada pregunta
+                let respuestaActions = RespuestaActions()
+                for question in arrayQuestions {
+                    dispatch_group_enter(questionGroup)
+                    respuestaActions.getPregunta(String(question.idPreg)) { (arrayAnswer: [Answer]) -> Void in
+                        question.arrayAnswers = arrayAnswer
+                        appDelegate.currentTest = selectedTest
+                        appDelegate.currentTest?.arrayQuestions = arrayQuestions;
+                        dispatch_group_leave(questionGroup)
+                    }
+                }
+                dispatch_group_wait(questionGroup, DISPATCH_TIME_FOREVER)
+                dispatch_group_notify(questionGroup, dispatch_get_main_queue(), {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vcPregunta = storyboard.instantiateViewControllerWithIdentifier("QuestionTableView")
+                    self.presentViewController(vcPregunta, animated: true, completion: nil)
+                })
+            })
+        }
     }
     
 
@@ -139,7 +158,7 @@ class TestTableViewController: UITableViewController {
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showQuestion" {
             let questionTableViewController = segue.destinationViewController as! QuestionTableViewController
             if let selectedTestCell = sender as? TestTableViewCell {
@@ -147,17 +166,17 @@ class TestTableViewController: UITableViewController {
                 let selectedTest = arrayTest[indexPath.row]
                 questionTableViewController.test = selectedTest
                 
-               
                 
-               
-              
-                
-                    
-                
-                
+                let preguntaActions = PreguntaActions()
+                preguntaActions.getPregunta(String(selectedTest.idTest)) { (questions: [Question]) -> Void in
+                    dispatch_async(dispatch_get_main_queue(), {
+                        //print(questions[0].text)
+                        questionTableViewController.test?.arrayQuestions = questions
+                    })
+                }
             }
         }
-    }
+    }*/
     
 
 }

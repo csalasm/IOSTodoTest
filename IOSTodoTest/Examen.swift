@@ -25,4 +25,11 @@ class Examen {
         self.Nota = nota
         self.fecha = fecha
     }
+    
+    func getInDictionary() -> NSDictionary {
+        let dic = ["examenPK": ["dni": self.DNI, "idTest": self.ID_Test],
+                    "aciertos": String(self.Aciertos), "fallos": String(self.Fallos), "nota": String(self.Nota), "fecha": self.fecha
+        ]
+        return dic
+    }
 }
