@@ -28,11 +28,11 @@ class HttpPetition {
 
     }
     
-    func httpPost(examen: String, manageResponse: (NSData?, NSURLResponse?, NSError?) -> Void) {
+    func httpPost(body: String, manageResponse: (NSData?, NSURLResponse?, NSError?) -> Void) {
         let request = NSMutableURLRequest(URL: url!)
         request.setValue("application/json", forHTTPHeaderField: "Content-type")
         request.HTTPMethod = "POST"
-        request.HTTPBody = examen.dataUsingEncoding(NSUTF8StringEncoding)
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request, completionHandler: manageResponse)
