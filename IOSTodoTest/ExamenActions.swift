@@ -28,6 +28,8 @@ class ExamenActions {
                 
                 
                 let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                
+                print("EXAMEN")
                 print(reply)
                 let json = JSON(data: data!)
                 
@@ -36,7 +38,7 @@ class ExamenActions {
                     //Do something you want
                     examen = Examen(dni: subjson["examenPk"]["dni"].stringValue, id: subjson["examenPK"]["idTest"].stringValue,
                         aciertos: Int(subjson["aciertos"].stringValue)!,
-                        fallos: Int(subjson["fallos"].stringValue)!, nota: Double(subjson["nota"].stringValue)!, fecha: subjson["fecha"].stringValue)
+                        fallos: Int(subjson["fallos"].stringValue)!, nota: Double(subjson["nota"].stringValue)!, fecha: subjson["fecha"].stringValue, nombre: subjson["test"]["nombre"].stringValue)
                     print(examen?.ID_Test)
                         arrayExamenes.append(examen!)
                 }

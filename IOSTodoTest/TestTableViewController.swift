@@ -17,6 +17,15 @@ class TestTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor.lightGrayColor()
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
+
         arrayTest = appDelegate.arrayTest!
      
         // Uncomment the following line to preserve selection between presentations
@@ -71,14 +80,21 @@ class TestTableViewController: UITableViewController {
         let test = arrayTest[indexPath.row]
         
         //Conversion Int => String
-        let xNSNumber = test.idTest as NSNumber
-        let xString : String = xNSNumber.stringValue
+        let duracion = Int(test.duracion)!
+        let resta = Int(test.resta)!
+        
         
         cell.nameLabel.text = test.name
         cell.timeLabel.text = xString
         
         cell.typeLabel.text = test.name
         
+        if (resta == 0){
+            cell.typeLabel.text = "No resta"
+        } else{
+            cell.typeLabel.text = "Cada error resta " + String(resta) + " correcta/s"
+        }
+
         return cell
     }
     
