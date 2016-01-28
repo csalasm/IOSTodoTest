@@ -17,6 +17,15 @@ class TestTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor.lightGrayColor()
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
+
         arrayTest = appDelegate.arrayTest!
         print(arrayTest[0].nombre)
         //loadSampleTest()
@@ -99,18 +108,13 @@ class TestTableViewController: UITableViewController {
             cell.timeLabel.text = "Sin tiempo"
         }
         
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.grayColor().CGColor
         
-        switch resta {
-        case 0:
-            cell.typeLabel.text = "los fallo no restan"
-        case 1:
-           cell.typeLabel.text = "1 fallo resta una respuesta correcta"
-        case 2:
-           cell.typeLabel.text = "2 fallos restan una respuesta correcta"
-        case 3:
-            cell.typeLabel.text = "3 fallo restan una respuesta correcta"
-        default: // el switch debe cubrir todos los valores posibles
-            print("otro")
+        if (resta == 0){
+            cell.typeLabel.text = "No resta"
+        } else{
+            cell.typeLabel.text = "Cada error resta " + String(resta) + " correcta/s"
         }
 
         return cell
@@ -169,17 +173,11 @@ class TestTableViewController: UITableViewController {
                 let selectedTest = arrayTest[indexPath.row]
                 questionTableViewController.test = selectedTest
                 
-               
-                
-               
-              
-                
-                    
-                
-                
             }
         }
     }
-    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        //cell.backgroundColor = UIColor.clearColor()
+    }
 
 }

@@ -16,6 +16,13 @@ class ResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor.lightGrayColor()
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         let load_alert:LoadingAlert = LoadingAlert(point: self.view.center)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let examenAction = ExamenActions()
@@ -23,7 +30,6 @@ class ResultsTableViewController: UITableViewController {
         
         examenAction.getExamen(appDelegate.usuario!){(arrayExamenes: [Examen]) -> Void in
             dispatch_async(dispatch_get_main_queue()){
-                sleep(5)
                 self.arrayResults = arrayExamenes
                 self.tableView.reloadData()
                 load_alert.hide()
@@ -70,13 +76,26 @@ class ResultsTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let result = arrayResults [indexPath.row]
         
+      
+      
         cell.nameLabel.text = String(result.nombre)
         cell.successesLabel.text = String(result.Aciertos)
         cell.failuresLabel.text = String(result.Fallos)
         cell.scoreLabel.text = String(result.Nota)
+        cell.DateLabel.text = result.fecha
+        
+        /*let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = result.fecha.substringToIndex(result.fecha.endIndex.advancedBy(9))
+        let mifecha = dateFormatter.dateFromString(date)!
+        print(date)*/
+        //cell.DateLabel.text = String(mifecha)
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.grayColor().CGColor
         return cell
-
+    
     }
+    
     
 
     /*

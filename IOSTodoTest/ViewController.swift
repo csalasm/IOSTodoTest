@@ -8,11 +8,20 @@
 
 import UIKit
 
+// A delay function
+func delay(seconds seconds: Double, completion:()->()) {
+    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+    
+    dispatch_after(popTime, dispatch_get_main_queue()) {
+        completion()
+    }
+}
+
 class ViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var userTextField: UITextField!
-
+    @IBOutlet weak var imageLabel: UIImageView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loadActivityIndicatorView: UIActivityIndicatorView!
     
@@ -29,10 +38,21 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         buttonInicio.layer.cornerRadius = 10
-        buttonInicio.layer.borderWidth = 5
+        
         //buttonInicio.layer.borderColor
+        
+        buttonInicio.layer.masksToBounds = true
+
     }
 
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        imageLabel.center.x  -= view.bounds.width
+        userTextField.center.x -= view.bounds.width
+        passwordTextField.center.x -= view.bounds.width
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,9 +111,26 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animateWithDuration(0.5, animations: {
+            self.imageLabel.center.x += self.view.bounds.width
+        })
+        
+        UIView.animateWithDuration(0.5, delay: 0.3, options: [], animations: {
+            self.userTextField.center.x += self.view.bounds.width
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.4,
+            options: [], animations: {
+                self.passwordTextField.center.x += self.view.bounds.width
+            }, completion: nil)
+    }
     @IBAction func menu(sender: AnyObject) {
         (tabBarController as! TabBarController).sidebar.showInViewController(self, animated: true)
     }
+
     
   // MARK: Configuration
     

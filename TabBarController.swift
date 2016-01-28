@@ -17,6 +17,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         tabBar.hidden = true
         
+        
         moreNavigationController.navigationBar.hidden = true
         
         sidebar = FrostedSidebar(itemImages: [
