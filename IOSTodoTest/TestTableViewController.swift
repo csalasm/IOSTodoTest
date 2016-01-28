@@ -27,6 +27,8 @@ class TestTableViewController: UITableViewController {
 
 
         arrayTest = appDelegate.arrayTest!
+        //print(arrayTest[0].nombre)
+        //loadSampleTest()
      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,6 +36,16 @@ class TestTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    /*func loadSampleTest(){
+        let test1 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
+        
+        let test2 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
+        
+       let test3 = Test(nombre:"nombre",idTest:3,duracion :"nombre",resta :"nombre",activo:"nombre")
+        
+        //arrayTest += [test1,test2,test3]
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -85,9 +97,19 @@ class TestTableViewController: UITableViewController {
         
         
         cell.nameLabel.text = test.name
-        cell.timeLabel.text = xString
+        if duracion != 0 {
+            
+            let xNSNumber = duracion as NSNumber
+            let xString : String = xNSNumber.stringValue + " min"
+            cell.timeLabel.text = xString
         
-        cell.typeLabel.text = test.name
+        } else{
+            
+            cell.timeLabel.text = "Sin tiempo"
+        }
+        
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.grayColor().CGColor
         
         if (resta == 0){
             cell.typeLabel.text = "No resta"
@@ -121,6 +143,7 @@ class TestTableViewController: UITableViewController {
                 }
                 dispatch_group_wait(questionGroup, DISPATCH_TIME_FOREVER)
                 dispatch_group_notify(questionGroup, dispatch_get_main_queue(), {
+                    print("POR AQUI")
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vcPregunta = storyboard.instantiateViewControllerWithIdentifier("QuestionTableView")
                     self.presentViewController(vcPregunta, animated: true, completion: nil)

@@ -17,7 +17,8 @@ class PreguntaActions{
         var preguntas: [Question] = [Question]()
         
         httpPetition.httpGet({ (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            //let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            let reply = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            //print(reply)
         if data != nil{
             let json = JSON(data:data!)
             //var i = json.count

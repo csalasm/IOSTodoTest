@@ -243,15 +243,46 @@ class QuestionTableViewController: UITableViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         let fecha = dateFormatter.stringFromDate(NSDate())
         let examen = Examen(dni: (appDelegate?.usuario!.dni)!,
-            id: String(test!.idTest), aciertos: correct, fallos: fail, nota: mark, fecha: fecha)
+            id: String(test!.idTest), aciertos: correct, fallos: fail, nota: mark, fecha: fecha, nombre: "")
         let examenActions = ExamenActions()
         examenActions.saveExamen(examen) { () -> Void in
             dispatch_async(dispatch_get_main_queue(), {
-                    
+                    self.showSimpleAlert(mark) //muestra la nota por alerta
             })
         }
         
         
+    }
+    
+    func showSimpleAlert(nota : Double) {
+        let title = NSLocalizedString("Su calificación es de: ", comment: "")
+        
+        let message = NSLocalizedString( String(nota) , comment: "")
+        let cancelButtonTitle = NSLocalizedString("OK", comment: "")
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        // Create the action.
+        let okAction = UIAlertAction(title: cancelButtonTitle, style: .Default) { action in
+            
+            let testAction = TestActions()
+            testAction.testAuth((self.appDelegate?.usuario?.dni)!) { (arrayTest: [Test]) -> Void in
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.appDelegate!.arrayTest = arrayTest
+                    
+                    
+                    // Despues de cargar los tests, cambiamos de ventana
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vcTest = storyboard.instantiateViewControllerWithIdentifier("TestList")
+                    self.presentViewController(vcTest, animated: true, completion: nil)
+                    
+                })
+            }
+        }
+        // Add the action.
+        alertController.addAction(okAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
 }

@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var arrayTest: [Test]?
     var currentTest: Test?
     
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
